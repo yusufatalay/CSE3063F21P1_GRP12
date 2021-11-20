@@ -28,11 +28,11 @@ public class Student implements JSONConverter {
         return new ArrayList<Course>();
     }
 
-    private void toJson(){
+    public void toJSON(){
 
     }
 
-    private void fromJson(){
+    public void fromJSON(){
 
     }
 
