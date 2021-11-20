@@ -1,30 +1,37 @@
 package iteration1.Models;
 
+import iteration1.Resources.JSONConverter;
 import iteration1.Resources.SemesterName;
 
-public class Semester {
+public class Semester implements JSONConverter {
     private SemesterName semesterName;
     private int semesterNo;
 
-    public Semester(SemesterName semesterName, int semesterNo) {
-        this.semesterName = semesterName;
+    public Semester(int semesterNo) {
+
         this.semesterNo = semesterNo;
+        setSemesterName();
     }
 
     public SemesterName getSemesterName() {
-        // TODO: PASS
-    return semesterName;
+        return semesterName;
     }
 
     public int getSemesterNo() {
         return semesterNo;
     }
-    private void semesterName(SemesterName semesterName) {
-        // TODO: implement this, if semester no is even then semester name is SPRING othervise its FALL
-        this.semesterName = semesterName;
+
+    private void setSemesterName() {
+        this.semesterName = this.semesterNo % 2 == 0 ? SemesterName.SPRING : SemesterName.FALL ;
     }
 
+    @Override
+    public void toJSON() {
+        // TODO: Implement this
+    }
 
-
-
+    @Override
+    public void fromJSON() {
+        // TODO: Implement this
+    }
 }
