@@ -1,5 +1,8 @@
 package iteration1.Models;
 
+import iteration1.Resources.SemesterName;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Professor {
@@ -32,17 +35,18 @@ public class Professor {
         4.checkTotalCredits: if true advance to step 5
         5.checkTELimitation: if true then finish
          */
-        for(int i = 0; i < courseList.size(); i++){
+
+        for (int i = 0; i < courseList.size(); i++) {
             Course course = courseList.get(i);
             CourseSession session = selectedSessions.get(i);
-            if(!checkCourseQuota(course,session)
-                || !checkCollides(course,session)
-                || !checkPreRequisite(course)
-                || !checkTotalCredits(course)
-                || !checkTELimitation(course)
-                || !checkFTELimitation(course))
-            {
-                courseList.set(i,null);
+
+            if (!checkCourseQuota(session)
+                    || !checkPreRequisite(course, student)
+                    || !checkCollides(course, session, courseList, selectedSessions)
+                    || !checkTotalCredits(course, student)
+                    || !checkTELimitation(course, student, courseList)
+                    || !checkFTELimitation(course)) {
+                courseList.set(i, null);
                 break;
             }
         }
@@ -50,28 +54,60 @@ public class Professor {
         return new ArrayList<Course>();
     }
 
-    private boolean checkCourseQuota(Course course, CourseSession selectedSession) {
-        //Todo
+    private boolean checkCourseQuota(CourseSession selectedSession) {
+        if (selectedSession.getCourseCurrentStudentNumber() + 1 > selectedSession.getCourseQuota()) {
+            return false;
+        }
         return true;
     }
 
-    private boolean checkCollides(Course course, CourseSession selectedSession) {
-        //Todo
+    private boolean checkCollides(Course course, CourseSession session,
+                                  ArrayList<Course> courseList, ArrayList<CourseSession> selectedSession) {
+
+        for (Course _course : courseList) {
+            if (!_course.getCourseCode().equals(course.getCourseCode())) {
+                for (CourseSession _session : selectedSession) {
+                    if (session.getStartHour().getTime() <= _session.getEndHour().getTime()
+                            && _session.getStartHour().getTime() <= session.getEndHour().getTime()
+                            && findTimeInterval(session, _session) >= 50) {
+
+                        return false;
+                    }
+                }
+            }
+        }
         return true;
     }
 
-    private boolean checkPreRequisite(Course course) {
-        //Todo
+    private int findTimeInterval(CourseSession session1, CourseSession session2) {
+        long interval1 = Math.abs(session1.getEndHour().getTime() - session2.getStartHour().getTime());
+        long interval2 = Math.abs(session1.getStartHour().getTime() - session2.getEndHour().getTime());
+
+        if (interval1 > interval2) {
+            return (int) (interval2) / 600000;
+        } else {
+            return (int) (interval1) / 600000;
+        }
+
+    }
+
+    private boolean checkPreRequisite(Course course, Student student) {
+        for (Course _course : student.getTranscript().getFailedCourses()) {
+            if(course.getPreRequisiteCourse().contains(_course)) {
+                return false;
+            }
+        }
         return true;
     }
 
-    private boolean checkTotalCredits(Course course) {
-        //Todo
-        return true;
+    private boolean checkTotalCredits(Course course, Student student) {
+        return course.getRequiredCredits() <= student.getTranscript().getTotalCredits();
     }
 
-    private boolean checkTELimitation(Course course) {
-        //Todo
+    private boolean checkTELimitation(Course course, Student student, ArrayList<Course> courseList) {
+        if(student.getSemester().getSemesterName().equals(SemesterName.FALL)) {
+
+        }
         return true;
     }
 

@@ -5,6 +5,8 @@ public class Transcript {
     private Student student;
     private ArrayList<Course> passedCourses;
     private ArrayList<Course> failedCourses;
+
+
     private int totalCredits;
     private float gpa;
 
@@ -24,4 +26,9 @@ public class Transcript {
     public ArrayList<Course> getFailedCourses() {
         return this.failedCourses;
     }
+
+    public int getTotalCredits() {
+        return totalCredits;
+    }
+
 }
