@@ -28,26 +28,29 @@ public class Professor {
     }
 
     private boolean checkCourseQuota(ArrayList<Course> courseList) {
+        for (Course course : courseList)
+        {
+            //if (course.getCourseSession().indexOf(i) > course.getCourseSession().indexOf(1). )
+        }
+        return true;
+    }
+
+    private boolean checkCollides(ArrayList<Student> students) {
         //Todo
         return true;
     }
 
-    private boolean checkCollides(ArrayList<Course> courseList) {
+    private boolean checkPreRequisite(ArrayList<Student> students) {
         //Todo
         return true;
     }
 
-    private boolean checkPreRequisite(ArrayList<Course> courseList) {
+    private boolean checkTotalCredits(ArrayList<Student> students) {
         //Todo
         return true;
     }
 
-    private boolean checkTotalCredits(ArrayList<Course> courseList) {
-        //Todo
-        return true;
-    }
-
-    private boolean checkTELimitation(ArrayList<Course> courseList) {
+    private boolean checkTELimitation(ArrayList<Student> students) {
         //Todo
         return true;
     }

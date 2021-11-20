@@ -7,7 +7,8 @@ public class Student implements JSONConverter {
     private String name;
     private StudentID studentID;
     private Semester semester;
-    private ArrayList<Course> takenCourses  = new ArrayList<Course>();
+    private ArrayList<CourseSession> takenCourses  = new ArrayList<CourseSession>();
+    //private ArrayList<Integer> takenSessions = new ArrayList<Integer>();
     private Professor advisor;
     private Transcript transcript;
 
@@ -48,7 +49,7 @@ public class Student implements JSONConverter {
         return semester;
     }
 
-    public ArrayList<Course> getTakenCourses() {
+    public ArrayList<CourseSession> getTakenCourses() {
         return takenCourses;
     }
 

@@ -6,17 +6,15 @@ public class Course {
     private CourseCode courseCode;
     private int credit;
     private ArrayList<Course> preRequisiteCourse;
-    private int courseQuota;
-    private CourseSession courseSession;
+    private ArrayList<CourseSession> courseSessions;
     private int requiredCredits;
     private Semester courseSemester;
 
-    public Course(CourseCode courseCode, int credit, ArrayList<Course> preRequisiteCourse, int courseQuota, CourseSession courseSession, int requiredCredits, Semester courseSemester) {
+    public Course(CourseCode courseCode, int credit, ArrayList<Course> preRequisiteCourse, ArrayList<CourseSession> courseSessions, int requiredCredits, Semester courseSemester) {
         this.courseCode = courseCode;
         this.credit = credit;
         this.preRequisiteCourse = preRequisiteCourse;
-        this.courseQuota = courseQuota;
-        this.courseSession = courseSession;
+        this.courseSessions = courseSessions;
         this.requiredCredits = requiredCredits;
         this.courseSemester = courseSemester;
     }
@@ -33,12 +31,8 @@ public class Course {
         return preRequisiteCourse;
     }
 
-    public int getCourseQuota() {
-        return courseQuota;
-    }
-
-    public CourseSession getCourseSession() {
-        return courseSession;
+    public ArrayList<CourseSession> getCourseSession() {
+        return courseSessions;
     }
 
     public int getRequiredCredits() {
