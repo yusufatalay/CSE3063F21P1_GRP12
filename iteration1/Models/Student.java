@@ -7,9 +7,11 @@ public class Student implements JSONConverter {
     private String name;
     private StudentID studentID;
     private Semester semester;
-    private ArrayList<CourseSession> takenCourses  = new ArrayList<CourseSession>();
-    //private ArrayList<Integer> takenSessions = new ArrayList<Integer>();
+    private ArrayList<Course> takenCourses;
+    private ArrayList<Integer> takenSessions;
     private Professor advisor;
+
+
     private Transcript transcript;
 
 
@@ -22,11 +24,17 @@ public class Student implements JSONConverter {
     }
 
     public void selectAndEnrollCourses(){
-        //call sendToApproval then make that return value equal to takencourses.
+        ArrayList<Course> selectedCourses = new ArrayList<Course>();
+        //selectedCourses = random selected course list comes to here.
+
+        ArrayList<CourseSession> selectedSessions = new ArrayList<CourseSession>();
+        //selectedSessions = random selected session list comes to here.
+
+        takenCourses = sendToApproval(selectedCourses, selectedSessions);
     }
 
-    private ArrayList<Course> sendToApproval(ArrayList <Course> selectedCourses) {
-        return new ArrayList<Course>();
+    private ArrayList<Course> sendToApproval(ArrayList <Course> selectedCourses, ArrayList <CourseSession> selectedSessions) {
+        return advisor.approveCourseList(selectedCourses,selectedSessions,this);
     }
 
     public void toJSON(){
@@ -49,8 +57,12 @@ public class Student implements JSONConverter {
         return semester;
     }
 
-    public ArrayList<CourseSession> getTakenCourses() {
+    public ArrayList<Course> getTakenCourses() {
         return takenCourses;
+    }
+
+    public ArrayList<Integer> getTakenSessions() {
+        return takenSessions;
     }
 
     public Professor getAdvisor() {

@@ -31,7 +31,7 @@ public class Course {
         return preRequisiteCourse;
     }
 
-    public ArrayList<CourseSession> getCourseSession() {
+    public ArrayList<CourseSession> getCourseSessions() {
         return courseSessions;
     }
 

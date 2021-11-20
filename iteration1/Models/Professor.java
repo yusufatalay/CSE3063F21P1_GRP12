@@ -23,34 +23,59 @@ public class Professor {
         return advisee;
     }
 
-    public void approveCourseList(ArrayList<Course> courseList, Student student) {
-
-    }
-
-    private boolean checkCourseQuota(ArrayList<Course> courseList) {
-        for (Course course : courseList)
-        {
-            //if (course.getCourseSession().indexOf(i) > course.getCourseSession().indexOf(1). )
+    public ArrayList<Course> approveCourseList(ArrayList<Course> courseList, ArrayList<CourseSession> selectedSessions, Student student) {
+        /*
+        for each step if fails remove that course (make it NULL) and its session.
+        1.checkCourseQuota: if true advance to step 2
+        2.checkCollides: if true advance to step 3
+        3.checkPreRequisite: if true advance to step 4
+        4.checkTotalCredits: if true advance to step 5
+        5.checkTELimitation: if true then finish
+         */
+        for(int i = 0; i < courseList.size(); i++){
+            Course course = courseList.get(i);
+            CourseSession session = selectedSessions.get(i);
+            if(!checkCourseQuota(course,session)
+                || !checkCollides(course,session)
+                || !checkPreRequisite(course)
+                || !checkTotalCredits(course)
+                || !checkTELimitation(course)
+                || !checkFTELimitation(course))
+            {
+                courseList.set(i,null);
+                break;
+            }
         }
-        return true;
+
+        return new ArrayList<Course>();
     }
 
-    private boolean checkCollides(ArrayList<Student> students) {
+    private boolean checkCourseQuota(Course course, CourseSession selectedSession) {
         //Todo
         return true;
     }
 
-    private boolean checkPreRequisite(ArrayList<Student> students) {
+    private boolean checkCollides(Course course, CourseSession selectedSession) {
         //Todo
         return true;
     }
 
-    private boolean checkTotalCredits(ArrayList<Student> students) {
+    private boolean checkPreRequisite(Course course) {
         //Todo
         return true;
     }
 
-    private boolean checkTELimitation(ArrayList<Student> students) {
+    private boolean checkTotalCredits(Course course) {
+        //Todo
+        return true;
+    }
+
+    private boolean checkTELimitation(Course course) {
+        //Todo
+        return true;
+    }
+
+    private boolean checkFTELimitation(Course course) {
         //Todo
         return true;
     }
