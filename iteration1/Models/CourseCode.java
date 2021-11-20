@@ -9,10 +9,18 @@ public class CourseCode {
         this.courseYear = courseYear;
         this.courseID = courseID;
     }
-    public String getCourseCode(){
-        return  "temp";
-    }
+
     public void setCourseYear(Semester semester){
         this.courseYear = semester.getSemesterNo();
+    }
+
+    @Override
+    public String toString(){
+
+        StringBuilder courseCode = new StringBuilder();
+        courseCode.append(departmentCode);
+        courseCode.append(courseYear);
+        courseCode.append(courseID);
+        return courseCode.toString();
     }
 }

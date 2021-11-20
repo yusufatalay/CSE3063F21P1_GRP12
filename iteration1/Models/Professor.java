@@ -44,7 +44,7 @@ public class Professor {
                     || !checkPreRequisite(course, student)
                     || !checkCollides(course, session, courseList, selectedSessions)
                     || !checkTotalCredits(course, student)
-                    || !checkTELimitation(course, student, courseList)
+                    || !checkTELimitation(student, courseList)
                     || !checkFTELimitation(course)) {
                 courseList.set(i, null);
                 break;
@@ -100,12 +100,15 @@ public class Professor {
         return true;
     }
 
+
     private boolean checkTotalCredits(Course course, Student student) {
         return course.getRequiredCredits() <= student.getTranscript().getTotalCredits();
     }
 
-    private boolean checkTELimitation(Course course, Student student, ArrayList<Course> courseList) {
+    private boolean checkTELimitation(Student student, ArrayList<Course> courseList) {
         if(student.getSemester().getSemesterName().equals(SemesterName.FALL)) {
+
+        }else{
 
         }
         return true;

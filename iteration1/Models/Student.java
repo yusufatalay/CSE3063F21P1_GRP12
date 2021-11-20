@@ -2,6 +2,8 @@ package iteration1.Models;
 import iteration1.Resources.JSONConverter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Student implements JSONConverter {
     private String name;
@@ -44,6 +46,8 @@ public class Student implements JSONConverter {
     public void fromJSON(){
 
     }
+
+    Map<Course,String> map=new HashMap<Course,String>();
 
     public String getName(){
         return name;
