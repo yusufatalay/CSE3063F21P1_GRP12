@@ -1,4 +1,4 @@
-package iteration1.Models;
+package iteration1.src.Models;
 import java.util.ArrayList;
 
 public class Transcript {

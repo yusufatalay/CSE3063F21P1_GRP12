@@ -1,4 +1,4 @@
-package iteration1.Models;
+package iteration1.src.Models;
 
 public class StudentID {
     private int studentDepartment;

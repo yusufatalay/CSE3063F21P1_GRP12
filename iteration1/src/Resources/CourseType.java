@@ -1,4 +1,4 @@
-package iteration1.Resources;
+package iteration1.src.Resources;
 
 public enum CourseType {
 // Course types in our university
@@ -6,4 +6,5 @@ public enum CourseType {
     UE,
     TE,
     FTE,
+
 }

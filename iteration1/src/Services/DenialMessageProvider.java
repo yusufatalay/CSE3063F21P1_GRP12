@@ -1,7 +1,7 @@
-package iteration1.Services;
+package iteration1.src.Services;
 
-import iteration1.Models.Course;
-import iteration1.Resources.CourseType;
+import iteration1.src.Models.Course;
+
 
 public class DenialMessageProvider {
 

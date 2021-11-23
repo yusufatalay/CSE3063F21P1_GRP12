@@ -1,5 +1,5 @@
-package iteration1.Models;
-import iteration1.Resources.JSONConverter;
+package iteration1.src.Models;
+import iteration1.src.Resources.JSONConverter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,6 +47,7 @@ public class Student implements JSONConverter {
 
     }
 
+    // this map will be contain denied courses and their denial reasons of the student
     Map<Course,String> map=new HashMap<Course,String>();
 
     public String getName(){

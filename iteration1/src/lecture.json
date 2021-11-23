@@ -1,0 +1,36 @@
+{
+  "courseCode": "CSE3055",
+  "credit": 7,
+  "preRequisiteCourse": [
+    "CSE2055"
+  ],
+  "courseSessions": [
+    {
+      "quota": 20,
+      "sessionHours":[
+        {
+        "day": 0,
+        "hour": 0
+      },
+       {
+        "day": 0,
+        "hour": 1
+      }
+    ]
+    },
+    {
+      "quota": 50,
+      "hour1": {
+        "day": 3,
+        "hour": 3
+      },
+      "hour2": {
+        "day": 3,
+        "hour": 4
+      }
+    }
+  ],
+  "requiredCredits": 0,
+  "courseSemester": 5,
+  "courseType": ""
+}

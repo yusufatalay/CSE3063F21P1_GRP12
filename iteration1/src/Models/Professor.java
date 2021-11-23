@@ -1,6 +1,6 @@
-package iteration1.Models;
+package iteration1.src.Models;
 
-import iteration1.Resources.SemesterName;
+import iteration1.src.Resources.SemesterName;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -67,19 +67,19 @@ public class Professor {
         for (Course _course : courseList) {
             if (!_course.getCourseCode().equals(course.getCourseCode())) {
                 for (CourseSession _session : selectedSession) {
-                    if (session.getStartHour().getTime() <= _session.getEndHour().getTime()
+                    /*if (session.getStartHour().getTime() <= _session.getEndHour().getTime()
                             && _session.getStartHour().getTime() <= session.getEndHour().getTime()
                             && findTimeInterval(session, _session) >= 50) {
 
                         return false;
-                    }
+                    }*/
                 }
             }
         }
         return true;
     }
 
-    private int findTimeInterval(CourseSession session1, CourseSession session2) {
+  /*  private int findTimeInterval(CourseSession session1, CourseSession session2) {
         long interval1 = Math.abs(session1.getEndHour().getTime() - session2.getStartHour().getTime());
         long interval2 = Math.abs(session1.getStartHour().getTime() - session2.getEndHour().getTime());
 
@@ -89,7 +89,7 @@ public class Professor {
             return (int) (interval1) / 600000;
         }
 
-    }
+    }*/
 
     private boolean checkPreRequisite(Course course, Student student) {
         for (Course _course : student.getTranscript().getFailedCourses()) {

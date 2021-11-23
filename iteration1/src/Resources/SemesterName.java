@@ -1,4 +1,4 @@
-package iteration1.Resources;
+package iteration1.src.Resources;
 
 public enum SemesterName {
     FALL,

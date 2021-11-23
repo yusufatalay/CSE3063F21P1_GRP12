@@ -1,7 +1,7 @@
-package iteration1.Models;
+package iteration1.src.Models;
 
-import iteration1.Resources.JSONConverter;
-import iteration1.Resources.SemesterName;
+import iteration1.src.Resources.JSONConverter;
+import iteration1.src.Resources.SemesterName;
 
 public class Semester implements JSONConverter {
     private SemesterName semesterName;

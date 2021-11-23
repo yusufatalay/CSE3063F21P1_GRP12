@@ -1,19 +1,19 @@
-package iteration1.Models;
+package iteration1.src.Models;
 
-import iteration1.Resources.CourseType;
+import iteration1.src.Resources.CourseType;
 
 import java.util.ArrayList;
 
 public class Course {
     private CourseCode courseCode;
     private int credit;
-    private ArrayList<Course> preRequisiteCourse;
+    private ArrayList<CourseCode> preRequisiteCourse;
     private ArrayList<CourseSession> courseSessions;
     private int requiredCredits;
     private Semester courseSemester;
     private CourseType courseType;
 
-    public Course(CourseCode courseCode, int credit, ArrayList<Course> preRequisiteCourse, ArrayList<CourseSession> courseSessions, int requiredCredits, Semester courseSemester, CourseType courseType) {
+    public Course(CourseCode courseCode, int credit, ArrayList<CourseCode> preRequisiteCourse, ArrayList<CourseSession> courseSessions, int requiredCredits, Semester courseSemester, CourseType courseType) {
         this.courseCode = courseCode;
         this.credit = credit;
         this.preRequisiteCourse = preRequisiteCourse;
@@ -22,7 +22,6 @@ public class Course {
         this.courseSemester = courseSemester;
         this.courseType = courseType;
     }
-
     public CourseCode getCourseCode() {
         return courseCode;
     }
@@ -31,7 +30,7 @@ public class Course {
         return credit;
     }
 
-    public ArrayList<Course> getPreRequisiteCourse() {
+    public ArrayList<CourseCode> getPreRequisiteCourse() {
         return preRequisiteCourse;
     }
 
