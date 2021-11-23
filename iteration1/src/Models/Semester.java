@@ -34,4 +34,10 @@ public class Semester implements JSONConverter {
     public void fromJSON() {
         // TODO: Implement this
     }
+
+    @Override
+    public String toString() {
+        return "semesterName=" + semesterName +
+                ", semesterNo=" + semesterNo;
+    }
 }

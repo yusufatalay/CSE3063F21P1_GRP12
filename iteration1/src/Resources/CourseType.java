@@ -6,5 +6,13 @@ public enum CourseType {
     UE,
     TE,
     FTE,
+    MANDATORY("");
 
+    final String name;
+    CourseType(String name) { this.name = name; }
+    CourseType() { this(null); }
+    @Override
+    public String toString() {
+        return name == null ? super.toString() : name;
+    }
 }
