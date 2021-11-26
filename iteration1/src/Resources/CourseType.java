@@ -15,4 +15,17 @@ public enum CourseType {
     public String toString() {
         return name == null ? super.toString() : name;
     }
+
+    public static CourseType getCourseType(String type) {
+        if(type.equals("NTE"))
+            return CourseType.NTE;
+        else if (type.equals("UE"))
+            return CourseType.UE;
+        else if (type.equals("TE"))
+            return CourseType.TE;
+        else if (type.equals("FTE"))
+            return CourseType.FTE;
+        else
+            return CourseType.MANDATORY;
+    }
 }

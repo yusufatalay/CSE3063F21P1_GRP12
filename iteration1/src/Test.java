@@ -1,13 +1,12 @@
 package iteration1.src;
 
-import iteration1.src.Models.Course;
-import iteration1.src.Models.CourseCode;
-import iteration1.src.Models.CourseSession;
-import iteration1.src.Models.Semester;
+import iteration1.src.Models.*;
 import iteration1.src.Resources.CourseType;
+import iteration1.src.Services.StudentCreator;
 import org.json.*;
 
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -17,51 +16,96 @@ import java.util.ArrayList;
 public class Test {
 
     public static void main(String[] args) throws IOException {
-        String filePath = "D:/Workspaces/CSE3063F21P1_GRP12/iteration1/src/lecture.json";
-        JSONObject jsonObject = parseJSONFile(filePath);
+        ArrayList<Student> students = createStudents();
 
-        createCourses(jsonObject);
+        for (Student student: students) {
+            System.out.println(student.getTranscript().getTotalCredits());
+        }
     }
 
-    private static void createStudents() {
+    private static ArrayList<Student> createStudents() throws IOException {
+        String filePath = "D:/JavaProjects/termProject/CSE3063F21P1_GRP12/iteration1/src/names.json";
+
+        JSONArray namesArray = parseJSONFile(filePath).getJSONArray("names");
+        ArrayList<String> nameList = new ArrayList<>();
+        for (Object name : namesArray) {
+            nameList.add(name.toString());
+        }
+
+        ArrayList<Student> studentsArrayList = new ArrayList<Student>();
+
         for (int i = 0; i < 4; i++) {
-            /*
-            course list will be filtered according to semester.
-            semester and advisor will set here.
-             */
+            String advisorName = nameList.get((int) (Math.random() * nameList.size()));
+            Advisor advisor = new Advisor(advisorName);
+            nameList.remove(advisorName);
 
-            for (int j = 0; j < 70; j++) {
+            Semester semester = new Semester((i + 1) * 2);
 
+            ArrayList<Course> fullCourseList = createCourses();
+            ArrayList<Course> courseArrayList = getSemesterCourses(fullCourseList, semester);
+            // semester "fall" ise numaraya -1 ekle
+            StudentCreator studentCreator = new StudentCreator(semester, advisor, courseArrayList);
 
+            for (int j = 1; j <= 70; j++) {
+                String name = nameList.get((int) (Math.random() * nameList.size()));
+                nameList.remove(name);
+
+                studentsArrayList.add(studentCreator.createRandomStudent(j, name));
+            }
+        }
+
+        return studentsArrayList;
+    }
+
+    private static ArrayList<Course> getSemesterCourses(ArrayList<Course> fullCourseList, Semester semester) {
+        ArrayList<Course> takenList = new ArrayList<Course>();
+        for (Course course : fullCourseList) {
+            if (course.getCourseSemester().compareTo(semester) < 0) {
+                takenList.add(course);
+                continue;
+            }
+            break;
+        }
+
+        return takenList;
+    }
+
+    private static ArrayList<Course> createCourses() throws IOException {
+        String filePath = "D:/JavaProjects/termProject/CSE3063F21P1_GRP12/iteration1/src/lecture.json";
+        JSONArray courseJsonArray = parseJSONFile(filePath).getJSONArray("courses");
+        ArrayList<JSONObject> courseJSON = new ArrayList<>();
+        for (int i = 0; i < courseJsonArray.length(); i++) {
+            courseJSON.add((JSONObject) (courseJsonArray.get(i)));
+        }
+
+        ArrayList<Course> courseList = new ArrayList<>();
+        for (JSONObject course : courseJSON) {
+            String courseName = course.getString("courseName");
+            CourseCode courseCode = new CourseCode(course.getString("courseCode"));
+            CourseType courseType = CourseType.getCourseType(course.getString("courseType"));
+            int credit = course.getInt("credit");
+            int requiredCredits = course.getInt("requiredCredits");
+            Semester courseSemester = new Semester(course.getInt("courseSemester"));
+
+            JSONArray preRequisiteJSON = new JSONArray(course.getJSONArray("preRequisiteCourse"));
+            ArrayList<CourseCode> preRequisites = new ArrayList<>();
+
+            for (int i = 0; i < preRequisiteJSON.length(); i++) {
+                preRequisites.add(new CourseCode(preRequisiteJSON.get(i).toString()));
             }
 
+            JSONArray courseSessionsJSONObjects = new JSONArray(course.getJSONArray("courseSessions"));
+            ArrayList<CourseSession> courseSessions = new ArrayList<>();
+
+            for (int i = 0; i < courseSessionsJSONObjects.length(); i++) {
+                courseSessions.add(new CourseSession((JSONObject) courseSessionsJSONObjects.get(i)));
+            }
+
+            Course _course = new Course(courseName, courseCode, credit, preRequisites, courseSessions, requiredCredits, courseSemester, CourseType.MANDATORY);  // CourseType will be dynamic.
+            courseList.add(_course);
         }
 
-    }
-
-    private static void createCourses(JSONObject jsonObject) {
-        String courseName = jsonObject.getString("courseName");
-        CourseCode courseCode = new CourseCode(jsonObject.getString("courseCode"));
-        int credit = jsonObject.getInt("credit");
-        int requiredCredits = jsonObject.getInt("requiredCredits");
-        Semester courseSemester = new Semester(jsonObject.getInt("courseSemester"));
-
-        JSONArray preRequisiteJSON = new JSONArray(jsonObject.getJSONArray("preRequisiteCourse"));
-        ArrayList<CourseCode> preRequisites = new ArrayList<>();
-
-        for (int i = 0; i < preRequisiteJSON.length(); i++) {
-            preRequisites.add(new CourseCode(preRequisiteJSON.get(i).toString()));
-        }
-
-        JSONArray courseSessionsJSONObjects = new JSONArray(jsonObject.getJSONArray("courseSessions"));
-        ArrayList<CourseSession> courseSessions = new ArrayList<>();
-
-        for (int i = 0; i < courseSessionsJSONObjects.length(); i++) {
-            courseSessions.add(new CourseSession((JSONObject) courseSessionsJSONObjects.get(i)));
-        }
-
-        Course course = new Course(courseName, courseCode, credit, preRequisites, courseSessions, requiredCredits, courseSemester, CourseType.MANDATORY);  // CourseType will be dynamic.
-        System.out.println(course);
+        return courseList;
     }
 
     public static JSONObject parseJSONFile(String filename) throws JSONException, IOException {
