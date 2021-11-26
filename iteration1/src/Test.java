@@ -19,12 +19,12 @@ public class Test {
         ArrayList<Student> students = createStudents();
 
         for (Student student: students) {
-            System.out.println(student.getTranscript().getTotalCredits());
+            System.out.println(student.getStudentID() + " : " + student.getName());
         }
     }
 
     private static ArrayList<Student> createStudents() throws IOException {
-        String filePath = "D:/JavaProjects/termProject/CSE3063F21P1_GRP12/iteration1/src/names.json";
+        String filePath = "D:/Workspaces/CSE3063F21P1_GRP12/iteration1/src/names.json";
 
         JSONArray namesArray = parseJSONFile(filePath).getJSONArray("names");
         ArrayList<String> nameList = new ArrayList<>();
@@ -32,7 +32,7 @@ public class Test {
             nameList.add(name.toString());
         }
 
-        ArrayList<Student> studentsArrayList = new ArrayList<Student>();
+        ArrayList<Student> studentsArrayList = new ArrayList<>();
 
         for (int i = 0; i < 4; i++) {
             String advisorName = nameList.get((int) (Math.random() * nameList.size()));
@@ -58,7 +58,7 @@ public class Test {
     }
 
     private static ArrayList<Course> getSemesterCourses(ArrayList<Course> fullCourseList, Semester semester) {
-        ArrayList<Course> takenList = new ArrayList<Course>();
+        ArrayList<Course> takenList = new ArrayList<>();
         for (Course course : fullCourseList) {
             if (course.getCourseSemester().compareTo(semester) < 0) {
                 takenList.add(course);
@@ -71,7 +71,7 @@ public class Test {
     }
 
     private static ArrayList<Course> createCourses() throws IOException {
-        String filePath = "D:/JavaProjects/termProject/CSE3063F21P1_GRP12/iteration1/src/lecture.json";
+        String filePath = "D:/Workspaces/CSE3063F21P1_GRP12/iteration1/src/lectures.json";
         JSONArray courseJsonArray = parseJSONFile(filePath).getJSONArray("courses");
         ArrayList<JSONObject> courseJSON = new ArrayList<>();
         for (int i = 0; i < courseJsonArray.length(); i++) {

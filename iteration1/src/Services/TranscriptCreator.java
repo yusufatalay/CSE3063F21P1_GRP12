@@ -1,7 +1,6 @@
 package iteration1.src.Services;
 
 import iteration1.src.Models.Course;
-import iteration1.src.Models.Semester;
 import iteration1.src.Models.Transcript;
 
 import java.util.ArrayList;
@@ -30,8 +29,8 @@ public class TranscriptCreator {
 
     public ArrayList<Course> generatePassedCourses(ArrayList<Course> courseList, ArrayList<Course> failedCourses) {
         ArrayList<Course> passedCourses = new ArrayList<>();
-        for (Course course : failedCourses) {
-            if (!courseList.contains(course))
+        for (Course course : courseList) {
+            if (!failedCourses.contains(course))
                 passedCourses.add(course);
         }
         return passedCourses;
@@ -44,7 +43,6 @@ public class TranscriptCreator {
         }
         return totalCredits;
     }
-
 
     public float calculateGPA(ArrayList<Course> passedCourses, ArrayList<Course> failedCourses) {
         int takenCredits = findGivenCredits(passedCourses) + findGivenCredits(failedCourses);

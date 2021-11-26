@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Advisor {
     private String name;
-    private ArrayList<Student> advisee = new ArrayList<Student>();
+    private ArrayList<Student> advisee = new ArrayList<>();
 
     public Advisor(String name) {
         this.name = name;
@@ -88,7 +88,7 @@ public class Advisor {
 
     private boolean checkPreRequisite(Course course, Student student) {
         for (Course _course : student.getTranscript().getFailedCourses()) {
-            if(course.getPreRequisiteCourse().contains(_course)) {
+            if (course.getPreRequisiteCourse().contains(_course)) {
                 return false;
             }
         }
@@ -101,9 +101,9 @@ public class Advisor {
     }
 
     private boolean checkTELimitation(Student student, ArrayList<Course> courseList) {
-        if(student.getSemester().getSemesterName().equals(SemesterName.FALL)) {
+        if (student.getSemester().getSemesterName().equals(SemesterName.FALL)) {
 
-        }else{
+        } else {
 
         }
         return true;

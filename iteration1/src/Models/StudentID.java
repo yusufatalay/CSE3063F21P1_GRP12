@@ -2,14 +2,19 @@ package iteration1.src.Models;
 
 public class StudentID {
     private String studentDepartment;
-    private String getStudentEntryYear;
+    private String studentEntryYear;
     private String studentEntryOrder;
     public StudentID(String studentDepartment, String getStudentEntryYear, String studentEntryOrder) {
         this.studentDepartment = studentDepartment;
-        this.getStudentEntryYear = getStudentEntryYear;
+        this.studentEntryYear = getStudentEntryYear;
         this.studentEntryOrder = studentEntryOrder;
     }
     public String getStudentId(){
         return "temp";
+    }
+
+    @Override
+    public String toString() {
+        return studentDepartment + studentEntryYear + studentEntryOrder;
     }
 }
