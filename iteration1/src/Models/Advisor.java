@@ -5,21 +5,16 @@ import iteration1.src.Resources.SemesterName;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class Professor {
+public class Advisor {
     private String name;
-    private ArrayList<Course> givenCourses = new ArrayList<Course>();
     private ArrayList<Student> advisee = new ArrayList<Student>();
 
-    public Professor(String name) {
+    public Advisor(String name) {
         this.name = name;
     }
 
     public String getName() {
         return name;
-    }
-
-    public ArrayList<Course> getGivenCourses() {
-        return givenCourses;
     }
 
     public ArrayList<Student> getAdvisee() {

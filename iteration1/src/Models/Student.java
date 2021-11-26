@@ -5,19 +5,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Student implements JSONConverter {
+public class Student {
     private String name;
     private StudentID studentID;
     private Semester semester;
     private ArrayList<Course> takenCourses;
     private ArrayList<Integer> takenSessions;
-    private Professor advisor;
-
-
+    private Advisor advisor;
     private Transcript transcript;
 
-
-    public Student(String name, StudentID studentID, Semester semester, Professor advisor, Transcript transcript) {
+    public Student(String name, StudentID studentID, Semester semester, Advisor advisor, Transcript transcript) {
         this.name = name;
         this.studentID = studentID;
         this.semester = semester;
@@ -37,14 +34,6 @@ public class Student implements JSONConverter {
 
     private ArrayList<Course> sendToApproval(ArrayList <Course> selectedCourses, ArrayList <CourseSession> selectedSessions) {
         return advisor.approveCourseList(selectedCourses,selectedSessions,this);
-    }
-
-    public void toJSON(){
-
-    }
-
-    public void fromJSON(){
-
     }
 
     // this map will be contain denied courses and their denial reasons of the student
@@ -70,7 +59,7 @@ public class Student implements JSONConverter {
         return takenSessions;
     }
 
-    public Professor getAdvisor() {
+    public Advisor getAdvisor() {
         return advisor;
     }
 

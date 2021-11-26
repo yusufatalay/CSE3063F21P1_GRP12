@@ -16,19 +16,27 @@ import java.util.ArrayList;
 
 public class Test {
 
-    public static JSONObject parseJSONFile(String filename) throws JSONException, IOException {
-        Path path = Paths.get(filename);
-
-        String content = new String(Files.readAllBytes(path));
-        return new JSONObject(content);
-    }
-
     public static void main(String[] args) throws IOException {
-
         String filePath = "D:/Workspaces/CSE3063F21P1_GRP12/iteration1/src/lecture.json";
         JSONObject jsonObject = parseJSONFile(filePath);
 
         createCourses(jsonObject);
+    }
+
+    private static void createStudents() {
+        for (int i = 0; i < 4; i++) {
+            /*
+            course list will be filtered according to semester.
+            semester and advisor will set here.
+             */
+
+            for (int j = 0; j < 70; j++) {
+
+
+            }
+
+        }
+
     }
 
     private static void createCourses(JSONObject jsonObject) {
@@ -52,7 +60,14 @@ public class Test {
             courseSessions.add(new CourseSession((JSONObject) courseSessionsJSONObjects.get(i)));
         }
 
-        Course course = new Course(courseName, courseCode, credit, preRequisites, courseSessions, requiredCredits, courseSemester, CourseType.MANDATORY);
+        Course course = new Course(courseName, courseCode, credit, preRequisites, courseSessions, requiredCredits, courseSemester, CourseType.MANDATORY);  // CourseType will be dynamic.
         System.out.println(course);
+    }
+
+    public static JSONObject parseJSONFile(String filename) throws JSONException, IOException {
+        Path path = Paths.get(filename);
+
+        String content = new String(Files.readAllBytes(path));
+        return new JSONObject(content);
     }
 }
