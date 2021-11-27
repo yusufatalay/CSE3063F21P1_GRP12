@@ -1,5 +1,6 @@
 package iteration1.src.Models;
 import iteration1.src.Resources.JSONConverter;
+import iteration1.src.Services.CourseSelector;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +11,7 @@ public class Student {
     private StudentID studentID;
     private Semester semester;
     private ArrayList<Course> takenCourses;
-    private ArrayList<Integer> takenSessions;
+    private ArrayList<CourseSession> takenSessions;
     private Advisor advisor;
     private Transcript transcript;
     private ArrayList<String> denialMessages;
@@ -24,14 +25,16 @@ public class Student {
         this.transcript = transcript;
     }
 
-    public void selectAndEnrollCourses(){
-        ArrayList<Course> selectedCourses = new ArrayList<Course>();
-        //selectedCourses = random selected course list comes to here.
+    public void selectAndEnrollCourses(ArrayList<Course> allCourses){
 
-        ArrayList<Integer> selectedSessions = new ArrayList<>();
-        //selectedSessions = random selected session list comes to here.
+        ArrayList<Course> selectedCourses = new CourseSelector().selectCourses(this, allCourses);
+
+        ArrayList<Integer> selectedSessions = new CourseSelector().selectSessions(selectedCourses);
 
         takenCourses = sendToApproval(selectedCourses, selectedSessions);
+        for (int i = 0; i < takenCourses.size(); i++) {
+            takenSessions.add(takenCourses.get(i).getCourseSessions().get(selectedSessions.get(i)));
+        }
     }
 
     private ArrayList<Course> sendToApproval(ArrayList <Course> selectedCourses, ArrayList <Integer> selectedSessions) {
@@ -55,7 +58,7 @@ public class Student {
         return takenCourses;
     }
 
-    public ArrayList<Integer> getTakenSessions() {
+    public ArrayList<CourseSession> getTakenSessions() {
         return takenSessions;
     }
 

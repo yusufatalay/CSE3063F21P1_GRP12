@@ -6,6 +6,7 @@ public enum CourseType {
     UE,
     TE,
     FTE,
+    LAB,
     MANDATORY("");
 
     final String name;
@@ -28,6 +29,8 @@ public enum CourseType {
             return CourseType.TE;
         else if (type.equals("FTE"))
             return CourseType.FTE;
+        else if(type.equals("LAB"))
+            return CourseType.LAB;
         else
             return CourseType.MANDATORY;
     }

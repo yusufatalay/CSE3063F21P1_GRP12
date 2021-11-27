@@ -6,7 +6,9 @@ import iteration1.src.Services.StudentCreator;
 import org.json.*;
 
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -15,15 +17,15 @@ import java.util.ArrayList;
 public class Test {
 
     public static void main(String[] args) throws IOException {
-        ArrayList<Student> students = createStudents();
+        //ArrayList<Student> students = createStudents();
 
-        for (Student student: students) {
-            System.out.println(student.getStudentID() + " : " + student.getName());
-        }
+        URL url = Test.class.getResource("input.json");
+        System.out.println(url.getPath());
     }
 
     private static ArrayList<Student> createStudents() throws IOException {
         String filePath = "D:/Workspaces/CSE3063F21P1_GRP12/iteration1/src/names.json";
+        String inputPath = "C:/Users/Eren/IdeaProjects/CSE3063F21P1_GRP12/iteration1/src/input.json";
 
         JSONArray namesArray = parseJSONFile(filePath).getJSONArray("names");
         ArrayList<String> nameList = new ArrayList<>();

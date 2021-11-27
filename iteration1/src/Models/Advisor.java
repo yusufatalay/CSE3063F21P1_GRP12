@@ -40,7 +40,19 @@ public class Advisor {
         checkTELimitation(student, selectedCourses);
         checkFTELimitation(student, selectedCourses);
 
-        selectedCourses.removeAll(Collections.singleton(null));
+        //int limit = selectedCourses.size();
+
+        for(int i = 0; i < selectedCourses.size(); i++) { // TODO: If it doesnt work check HERE!!!.
+            if(selectedCourses.get(i) == null) {
+                selectedCourses.remove(i);
+                selectedSessions.remove(i);
+                i--; //limit--;
+            }
+            else {
+                selectedCourses.get(i).getCourseSessions().get(selectedSessions.get(i)).incrementEnrolledStudentAmount();
+            }
+
+        }
         return selectedCourses;
     }
 
@@ -50,6 +62,7 @@ public class Advisor {
             student.getDenialMessages().add(denialMessage);
             return false;
         }
+
         return true;
     }
 
