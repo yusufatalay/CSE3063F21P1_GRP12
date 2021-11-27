@@ -26,13 +26,13 @@ public class Student {
         ArrayList<Course> selectedCourses = new ArrayList<Course>();
         //selectedCourses = random selected course list comes to here.
 
-        ArrayList<CourseSession> selectedSessions = new ArrayList<CourseSession>();
+        ArrayList<Integer> selectedSessions = new ArrayList<>();
         //selectedSessions = random selected session list comes to here.
 
         takenCourses = sendToApproval(selectedCourses, selectedSessions);
     }
 
-    private ArrayList<Course> sendToApproval(ArrayList <Course> selectedCourses, ArrayList <CourseSession> selectedSessions) {
+    private ArrayList<Course> sendToApproval(ArrayList <Course> selectedCourses, ArrayList <Integer> selectedSessions) {
         return advisor.approveCourseList(selectedCourses,selectedSessions,this);
     }
 
