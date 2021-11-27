@@ -42,13 +42,12 @@ public class Advisor {
 
         //int limit = selectedCourses.size();
 
-        for(int i = 0; i < selectedCourses.size(); i++) { // TODO: If it doesnt work check HERE!!!.
-            if(selectedCourses.get(i) == null) {
+        for (int i = 0; i < selectedCourses.size(); i++) { // TODO: If it doesnt work check HERE!!!.
+            if (selectedCourses.get(i) == null) {
                 selectedCourses.remove(i);
                 selectedSessions.remove(i);
                 i--; //limit--;
-            }
-            else {
+            } else {
                 selectedCourses.get(i).getCourseSessions().get(selectedSessions.get(i)).incrementEnrolledStudentAmount();
             }
 
@@ -58,7 +57,8 @@ public class Advisor {
 
     private boolean checkCourseQuota(CourseSession selectedSession, Student student, Course course) {
         if (selectedSession.getCourseCurrentStudentNumber() + 1 > selectedSession.getCOURSE_QUOTA()) {
-            String denialMessage =  "The student couldn't register for " + course.getCourseCode() + " because of a quota problem.";
+            String denialMessage = "The student couldn't register for " + course.getCourseCode() + " because of a quota problem.";
+            System.out.println(student.getStudentID().toString() + " - " + student.getName() + ": " + denialMessage);
             student.getDenialMessages().add(denialMessage);
             return false;
         }
@@ -70,6 +70,8 @@ public class Advisor {
         for (Course _course : student.getTranscript().getFailedCourses()) {
             if (course.getPreRequisiteCourses().contains(_course.getCourseCode())) {
                 String denialMessage = "The system didn't allow " + course.getCourseCode() + " student failed prereq. " + _course.getCourseCode();
+                System.out.println(student.getStudentID().toString() + " - " + student.getName() + ": " + denialMessage);
+
                 student.getDenialMessages().add(denialMessage);
                 return false;
             }
@@ -90,6 +92,8 @@ public class Advisor {
                             collideCounter++;
                             if (collideCounter > 1) {
                                 String denialMessage = "Advisor didn't approve " + course.getCourseCode() + " because of at least two hours collision with " + _course.getCourseCode() + " in schedule.";
+                                System.out.println(student.getStudentID().toString() + " - " + student.getName() + ": " + denialMessage);
+
                                 student.getDenialMessages().add(denialMessage);
                                 return false;
                             }
@@ -102,9 +106,13 @@ public class Advisor {
     }
 
     private boolean checkTotalCredits(Course course, Student student) {
-        if(course.getRequiredCredits() > student.getTranscript().getTotalCredits()){
-            String denialMessage = "The advisor didn't approve " + course.getCourseType().toString() + " " + course.getCourseCode() + " because student completed credits < " +  student.getTranscript().getTotalCredits();
+        if (course.getRequiredCredits() > student.getTranscript().getTotalCredits()) {
+            String denialMessage = "The advisor didn't approve " + course.getCourseType().toString() + " " + course.getCourseCode() + " because student completed credits < " + course.getRequiredCredits();
+            System.out.println(student.getStudentID().toString() + " - " + student.getName() + ": " + denialMessage);
+
+
             student.getDenialMessages().add(denialMessage);
+
             return false;
         }
         return true;
@@ -119,16 +127,20 @@ public class Advisor {
             }
 
             Course course = courseList.get(i);
-            if(course.getCourseType() == CourseType.TE) {
+            if (course.getCourseType() == CourseType.TE) {
                 counter++;
-                if((student.getSemester().getSemesterName() == SemesterName.FALL && counter > 1)) {
+                if ((student.getSemester().getSemesterName() == SemesterName.FALL && counter > 1)) {
                     courseList.set(i, null);
                     String denialMessage = "The advisor didn't approve TE " + course.getCourseCode() + " because student already took 1 TE and in FALL semester only 1 TE can be taken.";
+                    System.out.println(student.getStudentID().toString() + " - " + student.getName() + ": " + denialMessage);
+
+
                     student.getDenialMessages().add(denialMessage);
-                }
-                else if((student.getSemester().getSemesterName() == SemesterName.SPRING && counter > 3)){
+                } else if ((student.getSemester().getSemesterName() == SemesterName.SPRING && counter > 3)) {
                     courseList.set(i, null);
                     String denialMessage = "The advisor didn't approve TE " + course.getCourseCode() + " because student already took 3 TE and in SPRING semester only 3 TE can be taken.";
+                    System.out.println(student.getStudentID().toString() + " - " + student.getName() + ": " + denialMessage);
+
                     student.getDenialMessages().add(denialMessage);
                 }
             }
@@ -142,10 +154,12 @@ public class Advisor {
             }
 
             Course course = courseList.get(i);
-            if(course.getCourseType() == CourseType.FTE) {
-                if(student.getSemester().getSemesterName() == SemesterName.FALL) {
+            if (course.getCourseType() == CourseType.FTE) {
+                if (student.getSemester().getSemesterName() == SemesterName.FALL) {
                     courseList.set(i, null);
                     String denialMessage = "The advisor didn't approve FTE " + course.getCourseCode() + " because students can't take FTE in fall semester unless they are graduating this semester.";
+                    System.out.println(student.getStudentID().toString() + " - " + student.getName() + ": " + denialMessage);
+
                     student.getDenialMessages().add(denialMessage);
                 }
             }

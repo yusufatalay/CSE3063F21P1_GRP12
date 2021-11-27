@@ -9,9 +9,7 @@ public class StudentID {
         this.studentEntryYear = getStudentEntryYear;
         this.studentEntryOrder = studentEntryOrder;
     }
-    public String getStudentId(){
-        return toString();
-    }
+
 
     @Override
     public String toString() {

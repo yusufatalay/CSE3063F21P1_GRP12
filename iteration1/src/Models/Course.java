@@ -59,13 +59,6 @@ public class Course {
 
     @Override
     public String toString() {
-        return "Course Name: " + courseName +
-                "\ncourseCode=" + courseCode +
-                "\ncredit=" + credit +
-                "\npreRequisiteCourse=" + preRequisiteCourses +
-                "\ncourseSessions=" + courseSessions +
-                "\nrequiredCredits=" + requiredCredits +
-                "\ncourseSemester=" + courseSemester +
-                "\ncourseType=" + courseType + "\n";
+        return "Course Name: " + courseName + "---Course Code: " + courseCode + "---Credit: " + credit;
     }
 }

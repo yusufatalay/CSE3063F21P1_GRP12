@@ -8,6 +8,7 @@ import org.json.*;
 
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -20,16 +21,101 @@ public class Test {
     public static void main(String[] args) throws IOException {
         ArrayList<Course> fullCourseList = createCourses();
         ArrayList<Student> students = createStudents(fullCourseList);
-
         for (Student student : students) {
-            System.out.print(student.getName() + "-->");
             student.selectAndEnrollCourses(fullCourseList);
-            for (int i = 0; i < student.getTakenCourses().size(); i++) {
-                CourseCode code = student.getTakenCourses().get(i).getCourseCode();
-                System.out.print(code + " ");
-            }
-            System.out.println();
         }
+        File studentsFolder = new File("iteration1/Students");
+
+        File freshmanFolder = new File("iteration1/Students/Freshman");
+        File sophomoreFolder = new File("iteration1/Students/Sophomore");
+        File juniorFolder = new File("iteration1/Students/Junior");
+        File seniorFolder = new File("iteration1/Students/Senior");
+
+        createDirectoriesWithCommonParent(studentsFolder, freshmanFolder, sophomoreFolder, juniorFolder, seniorFolder);
+
+        // for each folder add appropriate student's json file to it also fill that file in the process
+        File std = new File("");
+        for (Student student : students) {
+            switch (student.getSemester().getSemesterNo()) {
+                case 1:
+                case 2:
+                    // create json file with this format -> <studentID>.json inside of approprite folder
+                    std = new File("iteration1/Students/Freshman/" + student.getStudentID().toString() + ".json");
+                    if (!std.exists()) {
+                        std.createNewFile();
+                    }
+                    // fill that file
+                    break;
+                case 3:
+                case 4:
+                    std = new File("iteration1/Students/Sophomore/" + student.getStudentID().toString() + ".json");
+                    if (!std.exists()) {
+                        std.createNewFile();
+                    }
+                    break;
+                case 5:
+                case 6:
+                    std = new File("iteration1/Students/Junior/" + student.getStudentID().toString() + ".json");
+                    if (!std.exists()) {
+                        std.createNewFile();
+                    }
+                    break;
+                case 7:
+                case 8:
+                    std = new File("iteration1/Students/Senior/" + student.getStudentID().toString() + ".json");
+                    if (!std.exists()) {
+                        std.createNewFile();
+                    }
+                    break;
+            }
+            JSONObject obj = new JSONObject();
+            obj.put("name", student.getName());
+            obj.put("studentID", student.getStudentID().toString());
+            obj.put("advisor", student.getAdvisor().getName());
+            obj.put("GPA", student.getTranscript().getGpa() + "");
+            JSONArray passedCoursesInfo = new JSONArray();
+            for (Course pcourse : student.getTranscript().getPassedCourses()) {
+                passedCoursesInfo.put(pcourse.toString());
+            }
+            obj.put("passedCourses", passedCoursesInfo);
+            JSONArray failedCoursesInfo = new JSONArray();
+            for (Course fcourse : student.getTranscript().getFailedCourses()) {
+                failedCoursesInfo.put(fcourse.toString());
+            }
+            obj.put("failedCourses", failedCoursesInfo);
+
+            obj.put("denialMessages", student.getDenialMessages().toArray());
+
+
+            try (FileWriter file = new FileWriter(std.getAbsolutePath())) {
+                //We can write any JSONArray or JSONObject instance to the file
+                file.write(obj.toString());
+                file.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        // implement trace logging for deny messages
+
+    }
+
+
+    public static boolean createDirectoriesWithCommonParent(
+            File parent, File... subs) {
+
+        parent.mkdirs();
+        if (!parent.exists() || !parent.isDirectory()) {
+            return false;
+        }
+
+        for (File sub : subs) {
+
+            sub.mkdir();
+            if (!sub.exists() || !sub.isDirectory()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private static ArrayList<Student> createStudents(ArrayList<Course> fullCourseList) throws IOException {
@@ -50,8 +136,8 @@ public class Test {
 
         ArrayList<Student> studentsArrayList = new ArrayList<>();
 
-//      TODO:  for (int i = 0; i < 4; i++) {
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 4; i++) {
+
             String advisorName = nameList.get((int) (Math.random() * nameList.size()));
             Advisor advisor = new Advisor(advisorName);
             nameList.remove(advisorName);
@@ -114,20 +200,15 @@ public class Test {
             for (int i = 0; i < courseSessionsJSONObjects.length(); i++) {
                 courseSessions.add(new CourseSession((JSONObject) courseSessionsJSONObjects.get(i)));
             }
-
             Course _course = new Course(courseName, courseCode, credit, preRequisites, courseSessions, requiredCredits, courseSemester, CourseType.MANDATORY);  // CourseType will be dynamic.
             courseList.add(_course);
         }
-
         return courseList;
     }
 
     public static JSONObject parseJSONFile(String filename) throws JSONException, IOException {
 
         Path pathOf = Paths.get("iteration1\\src\\" + filename).toAbsolutePath();
-        System.out.println(pathOf);
-
-
         String content = new String(Files.readAllBytes(pathOf));
         return new JSONObject(content);
     }
