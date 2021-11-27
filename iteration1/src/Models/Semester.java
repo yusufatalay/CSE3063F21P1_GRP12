@@ -11,18 +11,6 @@ public class Semester implements Comparable<Semester> {
         setSemesterName();
     }
 
-    public SemesterName getSemesterName() {
-        return semesterName;
-    }
-
-    public int getSemesterNo() {
-        return semesterNo;
-    }
-
-    private void setSemesterName() {
-        this.semesterName = this.semesterNo % 2 == 0 ? SemesterName.SPRING : SemesterName.FALL;
-    }
-
     public boolean equals(Semester obj) {
         return semesterNo == obj.semesterNo;
     }
@@ -36,6 +24,18 @@ public class Semester implements Comparable<Semester> {
         } else {
             return 0;
         }
+    }
+
+    public SemesterName getSemesterName() {
+        return semesterName;
+    }
+
+    public int getSemesterNo() {
+        return semesterNo;
+    }
+
+    private void setSemesterName() {
+        semesterName = semesterNo % 2 == 0 ? SemesterName.SPRING : SemesterName.FALL;
     }
 
     @Override

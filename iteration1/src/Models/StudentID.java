@@ -10,7 +10,7 @@ public class StudentID {
         this.studentEntryOrder = studentEntryOrder;
     }
     public String getStudentId(){
-        return "temp";
+        return toString();
     }
 
     @Override

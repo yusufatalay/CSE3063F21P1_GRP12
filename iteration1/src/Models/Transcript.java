@@ -28,4 +28,8 @@ public class Transcript {
         return totalCredits;
     }
 
+    public float getGpa() {
+        return gpa;
+    }
+
 }

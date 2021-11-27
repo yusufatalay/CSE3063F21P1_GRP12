@@ -3,24 +3,16 @@ package iteration1.src.Models;
 import iteration1.src.Resources.CourseType;
 import iteration1.src.Resources.SemesterName;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 
 public class Advisor {
+
     private String name;
     private ArrayList<Student> advisee = new ArrayList<>();
 
     public Advisor(String name) {
         this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public ArrayList<Student> getAdvisee() {
-        return advisee;
     }
 
     public ArrayList<Course> approveCourseList(ArrayList<Course> selectedCourses, ArrayList<Integer> selectedSessions, Student student) {
@@ -53,8 +45,17 @@ public class Advisor {
     }
 
     private boolean checkCourseQuota(CourseSession selectedSession) {
-        if (selectedSession.getCourseCurrentStudentNumber() + 1 > selectedSession.getCourseQuota()) {
+        if (selectedSession.getCourseCurrentStudentNumber() + 1 > selectedSession.getCOURSE_QUOTA()) {
             return false;
+        }
+        return true;
+    }
+
+    private boolean checkPreRequisite(Course course, Student student) {
+        for (Course _course : student.getTranscript().getFailedCourses()) {
+            if (course.getPreRequisiteCourses().contains(_course.getCourseCode())) {
+                return false;
+            }
         }
         return true;
     }
@@ -81,16 +82,6 @@ public class Advisor {
         }
         return true;
     }
-
-    private boolean checkPreRequisite(Course course, Student student) {
-        for (Course _course : student.getTranscript().getFailedCourses()) {
-            if (course.getPreRequisiteCourse().contains(_course.getCourseCode())) {
-                return false;
-            }
-        }
-        return true;
-    }
-
 
     private boolean checkTotalCredits(Course course, Student student) {
         return course.getRequiredCredits() <= student.getTranscript().getTotalCredits();
@@ -124,5 +115,13 @@ public class Advisor {
                 }
             }
         }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<Student> getAdvisee() {
+        return advisee;
     }
 }

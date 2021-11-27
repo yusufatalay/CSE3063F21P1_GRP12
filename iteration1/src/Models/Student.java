@@ -14,6 +14,9 @@ public class Student {
     private Advisor advisor;
     private Transcript transcript;
 
+    // this map will be contain denied courses and their denial reasons of the student
+    Map<Course,String> map=new HashMap<Course,String>();
+
     public Student(String name, StudentID studentID, Semester semester, Advisor advisor, Transcript transcript) {
         this.name = name;
         this.studentID = studentID;
@@ -36,8 +39,6 @@ public class Student {
         return advisor.approveCourseList(selectedCourses,selectedSessions,this);
     }
 
-    // this map will be contain denied courses and their denial reasons of the student
-    Map<Course,String> map=new HashMap<Course,String>();
 
     public String getName(){
         return name;

@@ -8,21 +8,25 @@ public class Course {
     private String courseName;
     private CourseCode courseCode;
     private int credit;
-    private ArrayList<CourseCode> preRequisiteCourse;
+    private ArrayList<CourseCode> preRequisiteCourses;
     private ArrayList<CourseSession> courseSessions;
     private int requiredCredits;
     private Semester courseSemester;
     private CourseType courseType;
 
-    public Course(String courseName, CourseCode courseCode, int credit, ArrayList<CourseCode> preRequisiteCourse, ArrayList<CourseSession> courseSessions, int requiredCredits, Semester courseSemester, CourseType courseType) {
+    public Course(String courseName, CourseCode courseCode, int credit, ArrayList<CourseCode> preRequisiteCourses, ArrayList<CourseSession> courseSessions, int requiredCredits, Semester courseSemester, CourseType courseType) {
         this.courseName = courseName;
         this.courseCode = courseCode;
         this.credit = credit;
-        this.preRequisiteCourse = preRequisiteCourse;
+        this.preRequisiteCourses = preRequisiteCourses;
         this.courseSessions = courseSessions;
         this.requiredCredits = requiredCredits;
         this.courseSemester = courseSemester;
         this.courseType = courseType;
+    }
+
+    public String getCourseName() {
+        return courseName;
     }
 
     public CourseCode getCourseCode() {
@@ -33,8 +37,8 @@ public class Course {
         return credit;
     }
 
-    public ArrayList<CourseCode> getPreRequisiteCourse() {
-        return preRequisiteCourse;
+    public ArrayList<CourseCode> getPreRequisiteCourses() {
+        return preRequisiteCourses;
     }
 
     public ArrayList<CourseSession> getCourseSessions() {
@@ -53,16 +57,12 @@ public class Course {
         return courseType;
     }
 
-    public void setCourseType(CourseType courseType) {
-        this.courseType = courseType;
-    }
-
     @Override
     public String toString() {
         return "Course Name: " + courseName +
                 "\ncourseCode=" + courseCode +
                 "\ncredit=" + credit +
-                "\npreRequisiteCourse=" + preRequisiteCourse +
+                "\npreRequisiteCourse=" + preRequisiteCourses +
                 "\ncourseSessions=" + courseSessions +
                 "\nrequiredCredits=" + requiredCredits +
                 "\ncourseSemester=" + courseSemester +
