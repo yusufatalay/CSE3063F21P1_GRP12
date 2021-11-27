@@ -6,7 +6,6 @@ import iteration1.src.Services.StudentCreator;
 import org.json.*;
 
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -42,7 +41,7 @@ public class Test {
             Semester semester = new Semester((i + 1) * 2);
 
             ArrayList<Course> fullCourseList = createCourses();
-            ArrayList<Course> courseArrayList = getSemesterCourses(fullCourseList, semester);
+            ArrayList<Course> courseArrayList = getPastCourses(fullCourseList, semester);
             // semester "fall" ise numaraya -1 ekle
             StudentCreator studentCreator = new StudentCreator(semester, advisor, courseArrayList);
 
@@ -57,7 +56,7 @@ public class Test {
         return studentsArrayList;
     }
 
-    private static ArrayList<Course> getSemesterCourses(ArrayList<Course> fullCourseList, Semester semester) {
+    private static ArrayList<Course> getPastCourses(ArrayList<Course> fullCourseList, Semester semester) {
         ArrayList<Course> takenList = new ArrayList<>();
         for (Course course : fullCourseList) {
             if (course.getCourseSemester().compareTo(semester) < 0) {

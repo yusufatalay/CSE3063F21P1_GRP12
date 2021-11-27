@@ -13,9 +13,8 @@ public class Student {
     private ArrayList<Integer> takenSessions;
     private Advisor advisor;
     private Transcript transcript;
+    private ArrayList<String> denialMessages;
 
-    // this map will be contain denied courses and their denial reasons of the student
-    Map<Course,String> map=new HashMap<Course,String>();
 
     public Student(String name, StudentID studentID, Semester semester, Advisor advisor, Transcript transcript) {
         this.name = name;
@@ -66,5 +65,9 @@ public class Student {
 
     public Transcript getTranscript() {
         return transcript;
+    }
+
+    public ArrayList<String> getDenialMessages() {
+        return denialMessages;
     }
 }
