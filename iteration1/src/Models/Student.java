@@ -11,10 +11,10 @@ public class Student {
     private StudentID studentID;
     private Semester semester;
     private ArrayList<Course> takenCourses;
-    private ArrayList<CourseSession> takenSessions;
+    private ArrayList<CourseSession> takenSessions = new ArrayList<>();
     private Advisor advisor;
     private Transcript transcript;
-    private ArrayList<String> denialMessages;
+    private ArrayList<String> denialMessages = new ArrayList<>();
 
 
     public Student(String name, StudentID studentID, Semester semester, Advisor advisor, Transcript transcript) {

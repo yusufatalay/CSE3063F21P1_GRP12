@@ -86,7 +86,7 @@ public class Advisor {
             if (!_course.equals(course)) {
                 for (int i = 0; i < 7; i++) {
                     for (int j = 0; j < 10; j++) {
-                        if (_course.getCourseSessions().get(selectedSessions.get(k)).getStartingHour()[i][j] == selectedSession.getStartingHour()[i][j]) {
+                        if (_course.getCourseSessions().get(selectedSessions.get(k)).getStartingHour()[i][j] && selectedSession.getStartingHour()[i][j]) {
                             collideCounter++;
                             if (collideCounter > 1) {
                                 String denialMessage = "Advisor didn't approve " + course.getCourseCode() + " because of at least two hours collision with " + _course.getCourseCode() + " in schedule.";
@@ -102,7 +102,7 @@ public class Advisor {
     }
 
     private boolean checkTotalCredits(Course course, Student student) {
-        if(course.getRequiredCredits() < student.getTranscript().getTotalCredits()){
+        if(course.getRequiredCredits() > student.getTranscript().getTotalCredits()){
             String denialMessage = "The advisor didn't approve " + course.getCourseType().toString() + " " + course.getCourseCode() + " because student completed credits < " +  student.getTranscript().getTotalCredits();
             student.getDenialMessages().add(denialMessage);
             return false;
@@ -112,7 +112,12 @@ public class Advisor {
 
     private void checkTELimitation(Student student, ArrayList<Course> courseList) {
         int counter = 0;
+
         for (int i = 0; i < courseList.size(); i++) {
+            if (courseList.get(i) == null) {
+                continue;
+            }
+
             Course course = courseList.get(i);
             if(course.getCourseType() == CourseType.TE) {
                 counter++;
@@ -132,6 +137,10 @@ public class Advisor {
 
     private void checkFTELimitation(Student student, ArrayList<Course> courseList) {
         for (int i = 0; i < courseList.size(); i++) {
+            if (courseList.get(i) == null) {
+                continue;
+            }
+
             Course course = courseList.get(i);
             if(course.getCourseType() == CourseType.FTE) {
                 if(student.getSemester().getSemesterName() == SemesterName.FALL) {

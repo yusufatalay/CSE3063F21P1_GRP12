@@ -8,6 +8,7 @@ public class CourseCode {
     // complete code is the complete course code like CSE3055 and deconstructs it here
     public CourseCode(String completeCode) {
         String[] part = completeCode.split("(?<=\\D)(?=\\d)");
+
         this.departmentCode = part[0];
         this.courseYear = Integer.parseInt(part[1].substring(0, 1));
         this.courseID = part[1].substring(1);

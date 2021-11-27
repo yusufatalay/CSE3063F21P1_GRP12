@@ -2,6 +2,7 @@ package iteration1.src;
 
 import iteration1.src.Models.*;
 import iteration1.src.Resources.CourseType;
+import iteration1.src.Resources.SemesterName;
 import iteration1.src.Services.StudentCreator;
 import org.json.*;
 
@@ -17,32 +18,46 @@ import java.util.ArrayList;
 public class Test {
 
     public static void main(String[] args) throws IOException {
-        //ArrayList<Student> students = createStudents();
+        ArrayList<Course> fullCourseList = createCourses();
+        ArrayList<Student> students = createStudents(fullCourseList);
 
-        URL url = Test.class.getResource("input.json");
-        System.out.println(url.getPath());
+        for (Student student : students) {
+            System.out.print(student.getName() + "-->");
+            student.selectAndEnrollCourses(fullCourseList);
+            for (int i = 0; i < student.getTakenCourses().size(); i++) {
+                CourseCode code = student.getTakenCourses().get(i).getCourseCode();
+                System.out.print(code + " ");
+            }
+            System.out.println();
+        }
     }
 
-    private static ArrayList<Student> createStudents() throws IOException {
-        String filePath = "D:/Workspaces/CSE3063F21P1_GRP12/iteration1/src/names.json";
-        String inputPath = "C:/Users/Eren/IdeaProjects/CSE3063F21P1_GRP12/iteration1/src/input.json";
+    private static ArrayList<Student> createStudents(ArrayList<Course> fullCourseList) throws IOException {
+        String namesPool = "names.json";
+        String inputFile = "input.json";
 
-        JSONArray namesArray = parseJSONFile(filePath).getJSONArray("names");
+        JSONArray namesArray = parseJSONFile(namesPool).getJSONArray("names");
         ArrayList<String> nameList = new ArrayList<>();
         for (Object name : namesArray) {
             nameList.add(name.toString());
         }
 
+        String inputSemesterName = parseJSONFile(inputFile).getString("semester");
+        int semesterSub = 0;
+        if (inputSemesterName.equals("FALL")) {
+            semesterSub = 1;
+        }
+
         ArrayList<Student> studentsArrayList = new ArrayList<>();
 
-        for (int i = 0; i < 4; i++) {
+//      TODO:  for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 1; i++) {
             String advisorName = nameList.get((int) (Math.random() * nameList.size()));
             Advisor advisor = new Advisor(advisorName);
             nameList.remove(advisorName);
 
-            Semester semester = new Semester((i + 1) * 2);
+            Semester semester = new Semester((i + 1) * 2 - semesterSub);
 
-            ArrayList<Course> fullCourseList = createCourses();
             ArrayList<Course> courseArrayList = getPastCourses(fullCourseList, semester);
             // semester "fall" ise numaraya -1 ekle
             StudentCreator studentCreator = new StudentCreator(semester, advisor, courseArrayList);
@@ -50,7 +65,6 @@ public class Test {
             for (int j = 1; j <= 70; j++) {
                 String name = nameList.get((int) (Math.random() * nameList.size()));
                 nameList.remove(name);
-
                 studentsArrayList.add(studentCreator.createRandomStudent(j, name));
             }
         }
@@ -72,8 +86,7 @@ public class Test {
     }
 
     private static ArrayList<Course> createCourses() throws IOException {
-        String filePath = "D:/Workspaces/CSE3063F21P1_GRP12/iteration1/src/lectures.json";
-        JSONArray courseJsonArray = parseJSONFile(filePath).getJSONArray("courses");
+        JSONArray courseJsonArray = parseJSONFile("lectures.json").getJSONArray("courses");
         ArrayList<JSONObject> courseJSON = new ArrayList<>();
         for (int i = 0; i < courseJsonArray.length(); i++) {
             courseJSON.add((JSONObject) (courseJsonArray.get(i)));
@@ -110,9 +123,12 @@ public class Test {
     }
 
     public static JSONObject parseJSONFile(String filename) throws JSONException, IOException {
-        Path path = Paths.get(filename);
 
-        String content = new String(Files.readAllBytes(path));
+        Path pathOf = Paths.get("iteration1\\src\\" + filename).toAbsolutePath();
+        System.out.println(pathOf);
+
+
+        String content = new String(Files.readAllBytes(pathOf));
         return new JSONObject(content);
     }
 }

@@ -246,11 +246,11 @@
           "sessionHours": [
             {
               "day": 6,
-              "hour": 6
+              "hour": 4
             },
             {
               "day": 6,
-              "hour": 7
+              "hour": 5
             }
           ]
         }
@@ -270,11 +270,11 @@
           "sessionHours": [
             {
               "day": 6,
-              "hour": 6
+              "hour": 2
             },
             {
               "day": 6,
-              "hour": 7
+              "hour": 3
             }
           ]
         }
@@ -469,35 +469,11 @@
           "sessionHours": [
             {
               "day": 6,
-              "hour": 6
+              "hour": 8
             },
             {
               "day": 6,
-              "hour": 7
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 2,
-      "courseType": "MANDATORY"
-    },
-    {
-      "courseName": "Non-Technical Elective I",
-      "courseCode": "NTE",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 70,
-          "sessionHours": [
-            {
-              "day": 2,
-              "hour": 4
-            },
-            {
-              "day": 2,
-              "hour": 5
+              "hour": 9
             }
           ]
         }
@@ -727,24 +703,6 @@
             {
               "day": 2,
               "hour": 3
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 4,
-      "courseType": "MANDATORY"
-    },
-    {
-      "courseName": "Principles of Programming Languages",
-      "courseCode": "CSE2260",
-      "credit": 4,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 70,
-          "sessionHours": [
-            {
             }
           ]
         }
