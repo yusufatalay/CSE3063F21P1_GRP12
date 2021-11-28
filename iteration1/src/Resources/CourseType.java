@@ -1,7 +1,7 @@
 package iteration1.src.Resources;
 
 public enum CourseType {
-// Course types in our university
+    // Course types in our university
     NTE,
     UE,
     TE,
@@ -9,10 +9,9 @@ public enum CourseType {
     LAB,
     MANDATORY("");
 
+    //These are required in order to create empty string value given in MANDATORY.
     final String name;
-
     CourseType(String name) { this.name = name; }
-
     CourseType() { this(null); }
 
     @Override
@@ -20,7 +19,7 @@ public enum CourseType {
         return name == null ? super.toString() : name;
     }
 
-    public static CourseType getCourseType(String type) {
+    public static CourseType getCourseType(String type) {   //We read string from JSON file and cast the enum according to that string value.
         if(type.equals("NTE"))
             return CourseType.NTE;
         else if (type.equals("UE"))

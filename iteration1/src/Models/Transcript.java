@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 
 public class Transcript {
+    //We hold the passed courses, failed courses, total credits and GPA of a student.
     private ArrayList<Course> passedCourses;
     private ArrayList<Course> failedCourses;
     private int totalCredits;
@@ -17,6 +18,7 @@ public class Transcript {
         this.gpa = gpa;
     }
 
+    //Getters created for the attributes defined in the class.
     public ArrayList<Course> getPassedCourses() {
         return this.passedCourses;
     }

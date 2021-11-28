@@ -2,7 +2,6 @@ package iteration1.src;
 
 import iteration1.src.Models.*;
 import iteration1.src.Resources.CourseType;
-import iteration1.src.Resources.SemesterName;
 import iteration1.src.Services.StudentCreator;
 import org.json.*;
 
@@ -32,9 +31,6 @@ public class Test {
         }
         // create student files
         createFiles(students);
-
-        // implement trace logging for deny messages
-
     }
 
     private static void createFiles(ArrayList<Student> students) throws IOException {

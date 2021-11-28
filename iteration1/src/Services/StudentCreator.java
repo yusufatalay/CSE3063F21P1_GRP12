@@ -3,7 +3,7 @@ package iteration1.src.Services;
 import iteration1.src.Models.*;
 import java.util.ArrayList;
 import java.util.Calendar;
-
+//This class creates students randomly at the beginning.
 public class StudentCreator {
     private Semester semester;
     private Advisor advisor;
@@ -17,19 +17,18 @@ public class StudentCreator {
 
 
     public Student createRandomStudent(int index, String name) {
-        StudentID studentID = generateStudentID(index);
+        StudentID studentID = generateStudentID(index); //We generate a student number according to certain parameters. (Department is fixed)
+        Transcript transcript = new TranscriptCreator().generateTranscript(takenCourses); //We generate a transcript for the students.
 
-        TranscriptCreator tc = new TranscriptCreator();
-        Transcript transcript = tc.generateTranscript(takenCourses);
-
-        return new Student(name, studentID, semester, advisor, transcript);
+        return new Student(name, studentID, semester, advisor, transcript); //We return the student.
     }
 
-    // semester, index | done
+
     private StudentID generateStudentID(int index) {
-        String department = "1501";
+        String department = "1501"; //Currently, department number is fixed.
+        //We calculate the entry year according to semester number.
         String entryYear = ((Calendar.getInstance().get(Calendar.YEAR) - (int) (Math.ceil(semester.getSemesterNo() / 2.0))) % 100) + "";
-        String entryOrder;
+        String entryOrder;  //We calculate this according to creation order.
         if (index < 10) {
             entryOrder = "00" + index;
         } else if (index < 100) {
@@ -38,7 +37,7 @@ public class StudentCreator {
             entryOrder = "" + index;
         }
 
-        return new StudentID(department, entryYear, entryOrder);
+        return new StudentID(department, entryYear, entryOrder);    //We return the student id.
     }
 
 
