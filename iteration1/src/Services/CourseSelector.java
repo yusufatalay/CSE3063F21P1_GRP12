@@ -7,13 +7,15 @@ public class CourseSelector {
 
 
     public ArrayList<Course> selectCourses(Student student, ArrayList<Course> allCourses) {
-        ArrayList<Course> courses = new ArrayList<Course>();
+        ArrayList<Course> courses = new ArrayList<>();
 
         for (int i = 0; i < allCourses.size(); i++) {
             if(student.getSemester().compareTo(allCourses.get(i).getCourseSemester()) == 0) {
                 courses.add(allCourses.get(i));
             }
         }
+
+        //If the student
         courses.addAll(student.getTranscript().getFailedCourses());
 
         return courses;

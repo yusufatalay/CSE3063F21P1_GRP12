@@ -10,7 +10,6 @@ import org.json.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -20,9 +19,10 @@ public class Test {
 
     public static void main(String[] args) throws IOException {
         ArrayList<Course> fullCourseList = createCourses();
+        //TODO: Get NTE, FTE, TE lists with json read.
         ArrayList<Student> students = createStudents(fullCourseList);
         for (Student student : students) {
-            student.selectAndEnrollCourses(fullCourseList);
+            student.selectAndEnrollCourses(fullCourseList); //TODO: give those lists to this method.
         }
         File studentsFolder = new File("iteration1/Students");
 
@@ -86,7 +86,6 @@ public class Test {
 
             obj.put("denialMessages", student.getDenialMessages().toArray());
 
-
             try (FileWriter file = new FileWriter(std.getAbsolutePath())) {
                 //We can write any JSONArray or JSONObject instance to the file
                 file.write(obj.toString());
@@ -145,7 +144,6 @@ public class Test {
             Semester semester = new Semester((i + 1) * 2 - semesterSub);
 
             ArrayList<Course> courseArrayList = getPastCourses(fullCourseList, semester);
-            // semester "fall" ise numaraya -1 ekle
             StudentCreator studentCreator = new StudentCreator(semester, advisor, courseArrayList);
 
             for (int j = 1; j <= 70; j++) {
@@ -182,7 +180,6 @@ public class Test {
         for (JSONObject course : courseJSON) {
             String courseName = course.getString("courseName");
             CourseCode courseCode = new CourseCode(course.getString("courseCode"));
-            CourseType courseType = CourseType.getCourseType(course.getString("courseType"));
             int credit = course.getInt("credit");
             int requiredCredits = course.getInt("requiredCredits");
             Semester courseSemester = new Semester(course.getInt("courseSemester"));
@@ -200,14 +197,13 @@ public class Test {
             for (int i = 0; i < courseSessionsJSONObjects.length(); i++) {
                 courseSessions.add(new CourseSession((JSONObject) courseSessionsJSONObjects.get(i)));
             }
-            Course _course = new Course(courseName, courseCode, credit, preRequisites, courseSessions, requiredCredits, courseSemester, CourseType.MANDATORY);  // CourseType will be dynamic.
+            Course _course = new Course(courseName, courseCode, credit, preRequisites, courseSessions, requiredCredits, courseSemester, CourseType.getCourseType(course.getString("courseType")));  // CourseType will be dynamic.
             courseList.add(_course);
         }
         return courseList;
     }
 
     public static JSONObject parseJSONFile(String filename) throws JSONException, IOException {
-
         Path pathOf = Paths.get("iteration1\\src\\" + filename).toAbsolutePath();
         String content = new String(Files.readAllBytes(pathOf));
         return new JSONObject(content);
