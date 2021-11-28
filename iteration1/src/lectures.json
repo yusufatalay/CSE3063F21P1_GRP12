@@ -109,54 +109,6 @@
       "courseType": "MANDATORY"
     },
     {
-      "courseName": "Computer Programming I",
-      "courseCode": "CSE1241.1.1",
-      "credit": 6,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 35,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 4
-            },
-            {
-              "day": 1,
-              "hour": 5
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 1,
-      "courseType": "MANDATORY"
-    },
-    {
-      "courseName": "Computer Programming I",
-      "courseCode": "CSE1241.1.2",
-      "credit": 6,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 35,
-          "sessionHours": [
-            {
-              "day": 3,
-              "hour": 2
-            },
-            {
-              "day": 3,
-              "hour": 3
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 1,
-      "courseType": "MANDATORY"
-    },
-    {
       "courseName": "Calculus I",
       "courseCode": "MATH1001",
       "credit": 6,
@@ -989,7 +941,7 @@
       "courseType": "MANDATORY"
     },
     {
-      "courseName": "Summer Practice I",
+      "courseName": "Summer Practice II",
       "courseCode": "CSE4000",
       "credit": 10,
       "preRequisiteCourse": [],

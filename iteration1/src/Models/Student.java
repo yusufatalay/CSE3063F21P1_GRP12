@@ -1,13 +1,10 @@
 package iteration1.src.Models;
-import iteration1.src.Resources.JSONConverter;
 import iteration1.src.Services.CourseSelector;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
-public class Student {
-    private String name;
+public class Student extends Person{
+
     private StudentID studentID;
     private Semester semester;
     private ArrayList<Course> takenCourses;
@@ -18,16 +15,17 @@ public class Student {
 
 
     public Student(String name, StudentID studentID, Semester semester, Advisor advisor, Transcript transcript) {
-        this.name = name;
+        super(name);
         this.studentID = studentID;
         this.semester = semester;
         this.advisor = advisor;
         this.transcript = transcript;
     }
 
-    public void selectAndEnrollCourses(ArrayList<Course> allCourses){
+    public void selectAndEnrollCourses(ArrayList<Course> allCourses, ArrayList<Course> teCourses,
+                                        ArrayList<Course> nteCourses,ArrayList<Course> fteCourses){
 
-        ArrayList<Course> selectedCourses = new CourseSelector().selectCourses(this, allCourses);
+        ArrayList<Course> selectedCourses = new CourseSelector().selectCourses(this, allCourses, teCourses, nteCourses, fteCourses);
 
         ArrayList<Integer> selectedSessions = new CourseSelector().selectSessions(selectedCourses);
 
@@ -39,11 +37,6 @@ public class Student {
 
     private ArrayList<Course> sendToApproval(ArrayList <Course> selectedCourses, ArrayList <Integer> selectedSessions) {
         return advisor.approveCourseList(selectedCourses,selectedSessions,this);
-    }
-
-
-    public String getName(){
-        return name;
     }
 
     public StudentID getStudentID() {

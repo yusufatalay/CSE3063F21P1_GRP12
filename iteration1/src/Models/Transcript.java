@@ -1,7 +1,6 @@
 package iteration1.src.Models;
 
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 
 public class Transcript {

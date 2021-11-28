@@ -4,15 +4,11 @@ import iteration1.src.Resources.CourseType;
 import iteration1.src.Resources.SemesterName;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
-public class Advisor {
-
-    private String name;
-    private ArrayList<Student> advisees = new ArrayList<>();
+public class Advisor extends Person {
 
     public Advisor(String name) {
-        this.name = name;
+        super(name);
     }
 
     public ArrayList<Course> approveCourseList(ArrayList<Course> selectedCourses, ArrayList<Integer> selectedSessions, Student student) {
@@ -34,7 +30,7 @@ public class Advisor {
                     || !checkCollides(course, session, selectedCourses, selectedSessions, student)
                     || !checkTotalCredits(course, student)) {
                 selectedCourses.set(i, null);
-                break;
+
             }
         }
         checkTELimitation(student, selectedCourses);
@@ -85,7 +81,7 @@ public class Advisor {
         for (int k = 0; k < selectedCourses.size(); k++) {
             Course _course = selectedCourses.get(k);
 
-            if (!_course.equals(course)) {
+            if (_course != null && !_course.equals(course)) {
                 for (int i = 0; i < 7; i++) {
                     for (int j = 0; j < 10; j++) {
                         if (_course.getCourseSessions().get(selectedSessions.get(k)).getStartingHour()[i][j] && selectedSession.getStartingHour()[i][j]) {
@@ -164,13 +160,5 @@ public class Advisor {
                 }
             }
         }
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public ArrayList<Student> getAdvisees() {
-        return advisees;
     }
 }

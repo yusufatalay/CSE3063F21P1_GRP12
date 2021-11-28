@@ -21,7 +21,7 @@
         }
       ],
       "requiredCredits": 155,
-      "courseSemester": 7,
+      "courseSemester": 0,
       "courseType": "TE"
     },
     {
@@ -45,7 +45,7 @@
         }
       ],
       "requiredCredits": 155,
-      "courseSemester": 7,
+      "courseSemester": 0,
       "courseType": "TE"
     },
     {
@@ -73,7 +73,7 @@
         }
       ],
       "requiredCredits": 155,
-      "courseSemester": 7,
+      "courseSemester": 0,
       "courseType": "TE"
     },
     {
@@ -101,7 +101,7 @@
         }
       ],
       "requiredCredits": 155,
-      "courseSemester": 7,
+      "courseSemester": 0,
       "courseType": "TE"
     },
     {
@@ -129,7 +129,7 @@
         }
       ],
       "requiredCredits": 155,
-      "courseSemester": 7,
+      "courseSemester": 0,
       "courseType": "TE"
     },
     {
@@ -157,7 +157,7 @@
         }
       ],
       "requiredCredits": 155,
-      "courseSemester": 7,
+      "courseSemester": 0,
       "courseType": "TE"
     },
     {
@@ -185,7 +185,7 @@
         }
       ],
       "requiredCredits": 155,
-      "courseSemester": 7,
+      "courseSemester": 0,
       "courseType": "TE"
     },
     {
@@ -213,38 +213,38 @@
         }
       ],
       "requiredCredits": 155,
-      "courseSemester": 7,
+      "courseSemester": 0,
       "courseType": "TE"
     }
   ],
   "facultyTechnicalElectives": [
     {
-    "courseName": "Advanced Innovative Design Management for Entrepreneurship",
-    "courseCode": "MGT4082",
-    "credit": 5,
-    "preRequisiteCourse": [],
-    "courseSessions": [
-    {
-      "quota": 45,
-      "sessionHours": [
+      "courseName": "Advanced Innovative Design Management for Entrepreneurship",
+      "courseCode": "MGT4082",
+      "credit": 5,
+      "preRequisiteCourse": [],
+      "courseSessions": [
         {
-          "day": 3,
-          "hour": 2
-        },
-        {
-          "day": 3,
-          "hour": 3
-        },
-        {
-          "day": 3,
-          "hour": 4
+          "quota": 45,
+          "sessionHours": [
+            {
+              "day": 3,
+              "hour": 2
+            },
+            {
+              "day": 3,
+              "hour": 3
+            },
+            {
+              "day": 3,
+              "hour": 4
+            }
+          ]
         }
-      ]
-    }
-  ],
-    "requiredCredits": 0,
-    "courseSemester": 7,
-    "courseType": "FTE"
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 0,
+      "courseType": "FTE"
     },
     {
       "courseName": "Innovation and New Product Development Management",
@@ -271,7 +271,7 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 7,
+      "courseSemester": 0,
       "courseType": "FTE"
     },
     {
@@ -299,7 +299,7 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 7,
+      "courseSemester": 0,
       "courseType": "FTE"
     },
     {
@@ -327,11 +327,11 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 7,
+      "courseSemester": 0,
       "courseType": "FTE"
     }
   ],
-  "nonTechnicalElectives" : [
+  "nonTechnicalElectives": [
     {
       "courseName": "Entrepreneurship and Innovation",
       "courseCode": "BUS1003",
@@ -366,7 +366,7 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 2,
+      "courseSemester": 0,
       "courseType": "NTE"
     },
     {
@@ -390,7 +390,7 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 2,
+      "courseSemester": 0,
       "courseType": "NTE"
     },
     {
@@ -414,7 +414,7 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 2,
+      "courseSemester": 0,
       "courseType": "NTE"
     },
     {
@@ -451,7 +451,7 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 2,
+      "courseSemester": 0,
       "courseType": "NTE"
     },
     {
@@ -475,7 +475,7 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 2,
+      "courseSemester": 0,
       "courseType": "NTE"
     },
     {
@@ -499,7 +499,7 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 2,
+      "courseSemester": 0,
       "courseType": "NTE"
     },
     {
@@ -523,7 +523,7 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 2,
+      "courseSemester": 0,
       "courseType": "NTE"
     },
     {
@@ -547,7 +547,7 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 2,
+      "courseSemester": 0,
       "courseType": "NTE"
     },
     {
@@ -571,7 +571,7 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 2,
+      "courseSemester": 0,
       "courseType": "NTE"
     },
     {
@@ -595,7 +595,7 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 2,
+      "courseSemester": 0,
       "courseType": "NTE"
     },
     {
@@ -632,7 +632,7 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 2,
+      "courseSemester": 0,
       "courseType": "NTE"
     },
     {
@@ -669,7 +669,7 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 2,
+      "courseSemester": 0,
       "courseType": "NTE"
     },
     {
@@ -693,7 +693,7 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 2,
+      "courseSemester": 0,
       "courseType": "NTE"
     },
     {
@@ -717,781 +717,7 @@
         }
       ],
       "requiredCredits": 0,
-      "courseSemester": 2,
-      "courseType": "NTE"
-    },    {
-      "courseName": "Entrepreneurship and Innovation",
-      "courseCode": "BUS1003",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 1
-            },
-            {
-              "day": 1,
-              "hour": 2
-            }
-          ]
-        },
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 3,
-              "hour": 5
-            },
-            {
-              "day": 3,
-              "hour": 6
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 7,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Career Development",
-      "courseCode": "HR1013",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 1
-            },
-            {
-              "day": 1,
-              "hour": 2
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 7,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Industrial and Economic Sociology",
-      "courseCode": "IKT1054",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 0
-            },
-            {
-              "day": 1,
-              "hour": 1
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 7,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Brand Creation/Branding",
-      "courseCode": "MRK3084",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 4,
-              "hour": 8
-            },
-            {
-              "day": 4,
-              "hour": 9
-            }
-          ]
-        },
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 2,
-              "hour": 1
-            },
-            {
-              "day": 2,
-              "hour": 2
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 7,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "The Culture Of Radiation Safety",
-      "courseCode": "NTE1003",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 8
-            },
-            {
-              "day": 1,
-              "hour": 9
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 7,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Introduction to Strategic Human Resources Management",
-      "courseCode": "NTE1014",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 2
-            },
-            {
-              "day": 1,
-              "hour": 3
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 7,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Introduction to Leadership & Management for Engineers",
-      "courseCode": "NTE1015",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 4
-            },
-            {
-              "day": 1,
-              "hour": 5
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 7,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Introduction to Strategy for Engineers",
-      "courseCode": "NTE1016",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 3,
-              "hour": 2
-            },
-            {
-              "day": 3,
-              "hour": 3
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 7,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Introduction to Business World For Engineers",
-      "courseCode": "NTE1018",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 3,
-              "hour": 4
-            },
-            {
-              "day": 3,
-              "hour": 5
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 7,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Marketing in a Technology Driven world for Engineers",
-      "courseCode": "NTE1017",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 2,
-              "hour": 4
-            },
-            {
-              "day": 2,
-              "hour": 5
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 7,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "German For Beginners",
-      "courseCode": "YDA1001",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 2
-            },
-            {
-              "day": 1,
-              "hour": 3
-            }
-          ]
-        },
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 3,
-              "hour": 4
-            },
-            {
-              "day": 3,
-              "hour": 5
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 7,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "German",
-      "courseCode": "YDA1002",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 4
-            },
-            {
-              "day": 1,
-              "hour": 5
-            }
-          ]
-        },
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 2,
-              "hour": 2
-            },
-            {
-              "day": 2,
-              "hour": 3
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 7,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "German Communication",
-      "courseCode": "YDA1003",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 3,
-              "hour": 4
-            },
-            {
-              "day": 3,
-              "hour": 5
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 7,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Spanish For Beginners",
-      "courseCode": "YDIS1001",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 2,
-              "hour": 8
-            },
-            {
-              "day": 2,
-              "hour": 9
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 8,
-      "courseType": "NTE"
-    },    {
-      "courseName": "Entrepreneurship and Innovation",
-      "courseCode": "BUS1003",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 1
-            },
-            {
-              "day": 1,
-              "hour": 2
-            }
-          ]
-        },
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 3,
-              "hour": 5
-            },
-            {
-              "day": 3,
-              "hour": 6
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 8,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Career Development",
-      "courseCode": "HR1013",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 1
-            },
-            {
-              "day": 1,
-              "hour": 2
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 8,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Industrial and Economic Sociology",
-      "courseCode": "IKT1054",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 0
-            },
-            {
-              "day": 1,
-              "hour": 1
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 8,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Brand Creation/Branding",
-      "courseCode": "MRK3084",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 4,
-              "hour": 8
-            },
-            {
-              "day": 4,
-              "hour": 9
-            }
-          ]
-        },
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 2,
-              "hour": 1
-            },
-            {
-              "day": 2,
-              "hour": 2
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 8,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "The Culture Of Radiation Safety",
-      "courseCode": "NTE1003",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 8
-            },
-            {
-              "day": 1,
-              "hour": 9
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 8,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Introduction to Strategic Human Resources Management",
-      "courseCode": "NTE1014",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 2
-            },
-            {
-              "day": 1,
-              "hour": 3
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 8,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Introduction to Leadership & Management for Engineers",
-      "courseCode": "NTE1015",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 4
-            },
-            {
-              "day": 1,
-              "hour": 5
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 8,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Introduction to Strategy for Engineers",
-      "courseCode": "NTE1016",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 3,
-              "hour": 2
-            },
-            {
-              "day": 3,
-              "hour": 3
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 8,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Introduction to Business World For Engineers",
-      "courseCode": "NTE1018",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 3,
-              "hour": 4
-            },
-            {
-              "day": 3,
-              "hour": 5
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 8,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Marketing in a Technology Driven world for Engineers",
-      "courseCode": "NTE1017",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 2,
-              "hour": 4
-            },
-            {
-              "day": 2,
-              "hour": 5
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 8,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "German For Beginners",
-      "courseCode": "YDA1001",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 2
-            },
-            {
-              "day": 1,
-              "hour": 3
-            }
-          ]
-        },
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 3,
-              "hour": 4
-            },
-            {
-              "day": 3,
-              "hour": 5
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 8,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "German",
-      "courseCode": "YDA1002",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 1,
-              "hour": 4
-            },
-            {
-              "day": 1,
-              "hour": 5
-            }
-          ]
-        },
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 2,
-              "hour": 2
-            },
-            {
-              "day": 2,
-              "hour": 3
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 8,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "German Communication",
-      "courseCode": "YDA1003",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 3,
-              "hour": 4
-            },
-            {
-              "day": 3,
-              "hour": 5
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 8,
-      "courseType": "NTE"
-    },
-    {
-      "courseName": "Spanish For Beginners",
-      "courseCode": "YDIS1001",
-      "credit": 3,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 45,
-          "sessionHours": [
-            {
-              "day": 2,
-              "hour": 8
-            },
-            {
-              "day": 2,
-              "hour": 9
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 8,
+      "courseSemester": 0,
       "courseType": "NTE"
     }
   ]

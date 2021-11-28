@@ -18,12 +18,23 @@ import java.util.ArrayList;
 public class Test {
 
     public static void main(String[] args) throws IOException {
-        ArrayList<Course> fullCourseList = createCourses();
-        //TODO: Get NTE, FTE, TE lists with json read.
+        ArrayList<Course> fullCourseList = createCourses("lectures.json", "courses");
+        ArrayList<Course> teCourses = createCourses("electives.json", "technicalElectives");
+        ArrayList<Course> nteCourses = createCourses("electives.json", "nonTechnicalElectives");
+        ArrayList<Course> fteCourses = createCourses("electives.json", "facultyTechnicalElectives");
         ArrayList<Student> students = createStudents(fullCourseList);
+
         for (Student student : students) {
-            student.selectAndEnrollCourses(fullCourseList); //TODO: give those lists to this method.
+            student.selectAndEnrollCourses(fullCourseList, teCourses, nteCourses, fteCourses); //TODO: give those lists to this method.
         }
+
+        createFiles(students);
+
+        // implement trace logging for deny messages
+
+    }
+
+    private static void createFiles(ArrayList<Student> students) throws IOException {
         File studentsFolder = new File("iteration1/Students");
 
         File freshmanFolder = new File("iteration1/Students/Freshman");
@@ -73,6 +84,11 @@ public class Test {
             obj.put("studentID", student.getStudentID().toString());
             obj.put("advisor", student.getAdvisor().getName());
             obj.put("GPA", student.getTranscript().getGpa() + "");
+            JSONArray takenCoursesInfo = new JSONArray();
+            for (Course tcourse : student.getTakenCourses()) {
+                takenCoursesInfo.put(tcourse.toString());
+            }
+            obj.put("takenCourses", takenCoursesInfo);
             JSONArray passedCoursesInfo = new JSONArray();
             for (Course pcourse : student.getTranscript().getPassedCourses()) {
                 passedCoursesInfo.put(pcourse.toString());
@@ -84,7 +100,11 @@ public class Test {
             }
             obj.put("failedCourses", failedCoursesInfo);
 
-            obj.put("denialMessages", student.getDenialMessages().toArray());
+            JSONArray denialMessagesInfo = new JSONArray();
+            for (String dmsgInfo : student.getDenialMessages()) {
+                denialMessagesInfo.put(dmsgInfo);
+            }
+            obj.put("denialMessages", denialMessagesInfo);
 
             try (FileWriter file = new FileWriter(std.getAbsolutePath())) {
                 //We can write any JSONArray or JSONObject instance to the file
@@ -94,8 +114,6 @@ public class Test {
                 e.printStackTrace();
             }
         }
-        // implement trace logging for deny messages
-
     }
 
 
@@ -169,8 +187,8 @@ public class Test {
         return takenList;
     }
 
-    private static ArrayList<Course> createCourses() throws IOException {
-        JSONArray courseJsonArray = parseJSONFile("lectures.json").getJSONArray("courses");
+    private static ArrayList<Course> createCourses(String fileName, String arrayName) throws IOException {
+        JSONArray courseJsonArray = parseJSONFile(fileName).getJSONArray(arrayName);
         ArrayList<JSONObject> courseJSON = new ArrayList<>();
         for (int i = 0; i < courseJsonArray.length(); i++) {
             courseJSON.add((JSONObject) (courseJsonArray.get(i)));
