@@ -1,11 +1,12 @@
 package iteration1.src.Models;
 
+// CourseCode class holds the code of course.
 public class CourseCode {
     private String departmentCode;
     private int courseYear;
     private String courseID;
 
-    // complete code is the complete course code like CSE3055 and deconstructs it here
+    // Complete code is the complete course code like CSE3055 and deconstructs it here.
     public CourseCode(String completeCode) {
         String[] part = completeCode.split("(?<=\\D)(?=\\d)");
 
@@ -14,6 +15,7 @@ public class CourseCode {
         this.courseID = part[1].substring(1);
     }
 
+    // General getters created for CourseCode.
     public String getDepartmentCode() {
         return departmentCode;
     }
@@ -26,6 +28,7 @@ public class CourseCode {
         return courseID;
     }
 
+    // toString returns completeCode.
     @Override
     public String toString() {
         return departmentCode + courseYear + courseID;

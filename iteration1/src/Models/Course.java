@@ -4,6 +4,7 @@ import iteration1.src.Resources.CourseType;
 
 import java.util.ArrayList;
 
+// This class will store courses.
 public class Course {
     private String courseName;
     private CourseCode courseCode;
@@ -14,6 +15,7 @@ public class Course {
     private Semester courseSemester;
     private CourseType courseType;
 
+    // Course will be created according to the data in the JSON file.
     public Course(String courseName, CourseCode courseCode, int credit, ArrayList<CourseCode> preRequisiteCourses, ArrayList<CourseSession> courseSessions, int requiredCredits, Semester courseSemester, CourseType courseType) {
         this.courseName = courseName;
         this.courseCode = courseCode;
@@ -25,6 +27,7 @@ public class Course {
         this.courseType = courseType;
     }
 
+    // These are general getter methods, there is nothing different.
     public String getCourseName() {
         return courseName;
     }
@@ -57,6 +60,7 @@ public class Course {
         return courseType;
     }
 
+    // toString returns course name, course code and credit.
     @Override
     public String toString() {
         return "Course Name: " + courseName + "---Course Code: " + courseCode + "---Credit: " + credit;
