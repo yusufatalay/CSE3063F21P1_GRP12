@@ -1721,6 +1721,151 @@
       "requiredCredits": 0,
       "courseSemester": 7,
       "courseType": "NTE"
+    },
+    {
+      "courseName": "Marketing in a Technology Driven world for Engineers",
+      "courseCode": "NTE1017",
+      "credit": 3,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 45,
+          "sessionHours": [
+            {
+              "day": 2,
+              "hour": 4
+            },
+            {
+              "day": 2,
+              "hour": 5
+            }
+          ]
+        } ],
+      "requiredCredits": 0,
+      "courseSemester": 7,
+      "courseType": "NTE"
+    },
+    {
+      "courseName": "German For Beginners",
+      "courseCode": "YDA1001",
+      "credit": 3,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 45,
+          "sessionHours": [
+            {
+              "day": 1,
+              "hour": 2
+            },
+            {
+              "day": 1,
+              "hour": 3
+            }
+          ]
+        },
+        {
+          "quota": 45,
+          "sessionHours": [
+            {
+              "day": 3,
+              "hour": 4
+            },
+            {
+              "day": 3,
+              "hour": 5
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 7,
+      "courseType": "NTE"
+    },
+    {
+      "courseName": "German",
+      "courseCode": "YDA1002",
+      "credit": 3,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 45,
+          "sessionHours": [
+            {
+              "day": 1,
+              "hour": 4
+            },
+            {
+              "day": 1,
+              "hour": 5
+            }
+          ]
+        },
+        {
+          "quota": 45,
+          "sessionHours": [
+            {
+              "day": 2,
+              "hour": 2
+            },
+            {
+              "day": 2,
+              "hour": 3
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 7,
+      "courseType": "NTE"
+    },
+    {
+      "courseName": "German Communication",
+
+      "courseCode": "YDA1003",
+      "credit": 3,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 45,
+          "sessionHours": [
+            {
+              "day": 3,
+              "hour": 4
+            },
+            {
+              "day": 3,
+              "hour": 5
+            }
+          ]
+        } ],
+      "requiredCredits": 0,
+      "courseSemester": 7,
+      "courseType": "NTE"
+    },
+    {
+      "courseName": "Spanish For Beginners",
+
+      "courseCode": "YDIS1001",
+      "credit": 3,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 45,
+          "sessionHours": [
+            {
+              "day": 2,
+              "hour": 8
+            },
+            {
+              "day": 2,
+              "hour": 9
+            }
+          ]
+        } ],
+      "requiredCredits": 0,
+      "courseSemester": 7,
+      "courseType": "NTE"
     }
   ]
 }
