@@ -1,15 +1,28 @@
 package iteration2.src.Services;
 
 import iteration2.src.Models.Course;
+import iteration2.src.Models.Semester;
 import iteration2.src.Models.Transcript;
 
 import java.util.ArrayList;
 
 public class TranscriptCreator {
 
-    public Transcript generateTranscript(ArrayList<Course> courseList) {
-        ArrayList<Course> failedCourses = generateFailedCourses(courseList);    //We get failed courses.
-        ArrayList<Course> passedCourses = generatePassedCourses(courseList, failedCourses); //We get the passed courses.
+    public Transcript generateTranscript(ArrayList<Course> courseList, ArrayList<Course> teList, ArrayList<Course> nteList, Semester semester) {
+        ArrayList<Course> localList = new ArrayList<>(courseList);
+        if (semester.getSemesterNo() > 2) {
+            int random = (int) (Math.random() * nteList.size());
+            localList.add(nteList.get(random));
+        }
+
+        if (semester.getSemesterNo() > 7) {
+            int random = (int) (Math.random() * teList.size());  //We get a random number to choose randomly from the list.
+            localList.add(teList.get(random));     //We get the course from the array list item of index "random".
+            random = (int) (Math.random() * nteList.size());
+            localList.add(nteList.get(random));
+        }
+        ArrayList<Course> failedCourses = generateFailedCourses(localList);    //We get failed courses.
+        ArrayList<Course> passedCourses = generatePassedCourses(localList, failedCourses); //We get the passed courses.
         int totalCredits = findGivenCredits(passedCourses);     //We calculate total credits according to passed courses.
         float gpa = calculateGPA(passedCourses, failedCourses); //We calculate gpa according to all courses passed or failed.
         return new Transcript(passedCourses, failedCourses, totalCredits, gpa); //We return the transcript.

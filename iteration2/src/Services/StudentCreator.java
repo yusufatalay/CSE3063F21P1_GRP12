@@ -10,17 +10,21 @@ public class StudentCreator {
     private Semester semester;
     private Advisor advisor;
     private ArrayList<Course> takenCourses;
-
-    public StudentCreator(Semester semester, Advisor advisor, ArrayList<Course> takenCourses) {
+    private ArrayList<Course> nteCourses;
+    private ArrayList<Course> teCourses;
+    public StudentCreator(Semester semester, Advisor advisor, ArrayList<Course> takenCourses, ArrayList<Course> teCourses, ArrayList<Course> nteCourses ) {
         this.semester = semester;
         this.advisor = advisor;
         this.takenCourses = takenCourses;
+        this.nteCourses = nteCourses;
+        this.teCourses = teCourses;
     }
 
 
     public Student createRandomStudent(int index, String name) {
         StudentID studentID = generateStudentID(index); //We generate a student number according to certain parameters. (Department is fixed)
-        Transcript transcript = new TranscriptCreator().generateTranscript(takenCourses); //We generate a transcript for the students.
+
+        Transcript transcript = new TranscriptCreator().generateTranscript(takenCourses, teCourses, nteCourses, semester); //We generate a transcript for the students.
 
         return new Student(name, studentID, semester, advisor, transcript); //We return the student.
     }

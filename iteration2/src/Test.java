@@ -23,7 +23,7 @@ public class Test {
         ArrayList<Course> teCourses = createCourses("electives.json", "technicalElectives");
         ArrayList<Course> nteCourses = createCourses("electives.json", "nonTechnicalElectives");
         ArrayList<Course> fteCourses = createCourses("electives.json", "facultyTechnicalElectives");
-        ArrayList<Student> students = createStudents(fullCourseList, teCourses, fteCourses);
+        ArrayList<Student> students = createStudents(fullCourseList, teCourses, nteCourses);
 
         // for each student in students array enroll the courses that created previously.
         for (Student student : students) {
@@ -136,7 +136,7 @@ public class Test {
     }
 
     // create students randomly from names and input files that contains current semester
-    private static ArrayList<Student> createStudents(ArrayList<Course> fullCourseList, ArrayList<Course> teCourses, ArrayList<Course> fteCourses) throws IOException {
+    private static ArrayList<Student> createStudents(ArrayList<Course> fullCourseList, ArrayList<Course> teCourses, ArrayList<Course> nteCourses) throws IOException {
         String namesPool = "names.json";
         String inputFile = "input.json";
 
@@ -162,8 +162,8 @@ public class Test {
 
             Semester semester = new Semester((i + 1) * 2 - semesterSub);
 
-            ArrayList<Course> courseArrayList = getPastCourses(fullCourseList, teCourses, fteCourses, semester);
-            StudentCreator studentCreator = new StudentCreator(semester, advisor, courseArrayList);
+            ArrayList<Course> courseArrayList = getPastCourses(fullCourseList, semester);
+            StudentCreator studentCreator = new StudentCreator(semester, advisor, courseArrayList, teCourses, nteCourses);
 
             for (int j = 1; j <= 70; j++) {
                 String name = nameList.get((int) (Math.random() * nameList.size()));
@@ -176,7 +176,7 @@ public class Test {
     }
 
     // get previous courses that student has took
-    private static ArrayList<Course> getPastCourses(ArrayList<Course> fullCourseList, ArrayList<Course> teCourses, ArrayList<Course> nteCourses, Semester semester) {
+    private static ArrayList<Course> getPastCourses(ArrayList<Course> fullCourseList, Semester semester) {
         ArrayList<Course> takenList = new ArrayList<>();
         for (Course course : fullCourseList) {
             if (course.getCourseSemester().compareTo(semester) < 0) {
@@ -185,19 +185,6 @@ public class Test {
             }
             break;
         }
-
-        if (semester.getSemesterNo() > 2) {
-            int random = (int) (Math.random() * nteCourses.size());
-            takenList.add(nteCourses.get(random));
-        }
-
-        if (semester.getSemesterNo() > 7) {
-            int random = (int) (Math.random() * teCourses.size());  //We get a random number to choose randomly from the list.
-            takenList.add(teCourses.get(random));     //We get the course from the array list item of index "random".
-            random = (int) (Math.random() * nteCourses.size());
-            takenList.add(nteCourses.get(random));
-        }
-
         return takenList;
     }
 
