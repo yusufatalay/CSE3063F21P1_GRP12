@@ -1,7 +1,7 @@
 from Person import Person
 
 
-class Advior(Person):
+class Advisor(Person):
 
     def __init__(self, name, students=None):
         super().__init__(name)
