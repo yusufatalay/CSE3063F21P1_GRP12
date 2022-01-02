@@ -1,10 +1,7 @@
-from Person import Person
-
-
-class Student(Person):
+class Student:
 
     def __init__(self, name, studentID, semester, advisor, transcript, takenCourses=None, takenSessions=None, denialMessages=None):
-        super().__init__(name)
+        self.name = name
         self.studentID = studentID
         self.semester = semester
         self.advisor = advisor

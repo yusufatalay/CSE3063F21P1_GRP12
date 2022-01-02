@@ -1,23 +1,20 @@
-from Person import Person
+class Advisor:
 
-
-class Advisor(Person):
-
-    def __init__(self, name, students=None):
-        super().__init__(name)
-        if students is None:
+    def __init__(self, name, studentList=None):
+        self.name = name
+        if studentList is None:
             self.students = []
         else:
-            self.students = students
+            self.studentList = studentList
 
     def addStudent(self, stu):
-        if stu not in self.students:
-            self.students.append(stu)
+        if stu not in self.studentList:
+            self.studentList.append(stu)
 
     def removeStudent(self, stu):
-        if stu in self.students:
-            self.students.remove(stu)
+        if stu in self.studentList:
+            self.studentList.remove(stu)
 
     def printStudents(self):
-        for stu in self.students:
+        for stu in self.studentList:
             print("-->", stu.name)
