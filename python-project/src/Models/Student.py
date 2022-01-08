@@ -26,25 +26,13 @@ class Student:
         if course not in self.takenCourses:
             self.takenCourses.append(course)
 
-    def removeCourse(self, course):
-        if course in self.takenCourses:
-            self.takenCourses.remove(course)
-
     def addSession(self, session):
         if session not in self.takenSessions:
             self.takenSessions.append(session)
 
-    def removeSession(self, session):
-        if session in self.takenSessions:
-            self.takenSessions.remove(session)
-
     def addDenialMessage(self, denialMessage):
         if denialMessage not in self.denialMessages:
             self.denialMessages.append(denialMessage)
-
-    def removeDenialMessage(self, denialMessage):
-        if denialMessage in self.denialMessages:
-            self.denialMessages.remove(denialMessage)
 
     # TODO: check every course for each condition one by one. add or not add them according to the result.
 
