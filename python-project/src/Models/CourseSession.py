@@ -2,8 +2,8 @@ class CourseSession:
 
     numberOfStudents = 0
 
-    def __init__(self, courseQuata, courseSessions=None):
-        self.courseQuata = courseQuata
+    def __init__(self, courseQuota, courseSessions=None):
+        self.courseQuata = courseQuota
         quota = courseSessions["quota"]
 
         self.courseHour = [[False for i in range(10)] for j in range(7)]

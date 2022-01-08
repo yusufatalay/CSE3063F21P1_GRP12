@@ -4,6 +4,7 @@ from Semester import Semester
 
 class Transcript:
 # Note to the future: We should probably set these passed&failed variables in the constructor with the methods below
+
     def __init__(self, totalCredits=0, gpa=0, passedCourses=None, failedCourses=None):
         self.totalCredits = totalCredits
         self.gpa = gpa
