@@ -4,8 +4,8 @@ from Semester import Semester
 
 class Transcript:
 
-    def __init__(self, tatalCredits=0, gpa=0, passedCourses=None, failedCourses=None):
-        self.tatalCredits = tatalCredits
+    def __init__(self, totalCredits=0, gpa=0, passedCourses=None, failedCourses=None):
+        self.totalCredits = totalCredits
         self.gpa = gpa
 
         if passedCourses is None:
