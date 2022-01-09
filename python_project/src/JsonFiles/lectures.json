@@ -1,0 +1,1113 @@
+{
+  "courses": [
+    {
+      "courseName": "Atatürk İlkeleri ve İnkılap Tarihi I",
+      "courseCode": "ATA121",
+      "credit": 2,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 1,
+              "hour": 2
+            },
+            {
+              "day": 1,
+              "hour": 1
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 1,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Introduction to Modern Biology",
+      "courseCode": "MBG1201",
+      "credit": 5,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 2,
+              "hour": 2
+            },
+            {
+              "day": 2,
+              "hour": 3
+            },
+            {
+              "day": 4,
+              "hour": 3
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 1,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Introduction to Computer Engineering",
+      "courseCode": "CSE1200",
+      "credit": 4,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 2,
+              "hour": 4
+            },
+            {
+              "day": 4,
+              "hour": 1
+            },
+            {
+              "day": 4,
+              "hour": 2
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 1,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Computer Programming I",
+      "courseCode": "CSE1241",
+      "credit": 6,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 0,
+              "hour": 2
+            },
+            {
+              "day": 0,
+              "hour": 3
+            },
+            {
+              "day": 2,
+              "hour": 5
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 1,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Calculus I",
+      "courseCode": "MATH1001",
+      "credit": 6,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 1,
+              "hour": 0
+            },
+            {
+              "day": 1,
+              "hour": 1
+            },
+            {
+              "day": 3,
+              "hour": 0
+            },
+            {
+              "day": 3,
+              "hour": 1
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 1,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Physics I",
+      "courseCode": "PHYS1101",
+      "credit": 4,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 1,
+              "hour": 6
+            },
+            {
+              "day": 3,
+              "hour": 5
+            },
+            {
+              "day": 3,
+              "hour": 6
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 1,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Physics Lab I",
+      "courseCode": "PHYS1103",
+      "credit": 2,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 20,
+          "sessionHours": [
+            {
+              "day": 0,
+              "hour": 0
+            },
+            {
+              "day": 0,
+              "hour": 1
+            }
+          ]
+        },
+        {
+          "quota": 20,
+          "sessionHours": [
+            {
+              "day": 1,
+              "hour": 2
+            },
+            {
+              "day": 1,
+              "hour": 3
+            }
+          ]
+        },
+        {
+          "quota": 20,
+          "sessionHours": [
+            {
+              "day": 2,
+              "hour": 0
+            },
+            {
+              "day": 2,
+              "hour": 1
+            }
+          ]
+        },
+        {
+          "quota": 20,
+          "sessionHours": [
+            {
+              "day": 4,
+              "hour": 5
+            },
+            {
+              "day": 4,
+              "hour": 6
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 1,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Türk Dili I",
+      "courseCode": "TRD121",
+      "credit": 2,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 6,
+              "hour": 6
+            },
+            {
+              "day": 6,
+              "hour": 7
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 1,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Atatürk İlkeleri ve İnkılap Tarihi II",
+      "courseCode": "ATA122",
+      "credit": 2,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 6,
+              "hour": 4
+            },
+            {
+              "day": 6,
+              "hour": 5
+            },
+            {
+              "day": 1,
+              "hour": 4
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 2,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Computer Programming II",
+      "courseCode": "CSE1242",
+      "credit": 6,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 0,
+              "hour": 3
+            },
+            {
+              "day": 0,
+              "hour": 4
+            },
+            {
+              "day": 1,
+              "hour": 3
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 2,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Calculus II",
+      "courseCode": "MATH1002",
+      "credit": 6,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 1,
+              "hour": 0
+            },
+            {
+              "day": 1,
+              "hour": 1
+            },
+            {
+              "day": 2,
+              "hour": 2
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 2,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Linear Algebra for Computer Engineering",
+      "courseCode": "MATH2256",
+      "credit": 5,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 0,
+              "hour": 2
+            },
+            {
+              "day": 3,
+              "hour": 2
+            },
+            {
+              "day": 3,
+              "hour": 3
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 2,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Physics II",
+      "courseCode": "PHYS1102",
+      "credit": 4,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 0,
+              "hour": 4
+            },
+            {
+              "day": 0,
+              "hour": 5
+            },
+            {
+              "day": 0,
+              "hour": 6
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 2,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Physics Lab II",
+      "courseCode": "PHYS1104",
+      "credit": 2,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 20,
+          "sessionHours": [
+            {
+              "day": 0,
+              "hour": 0
+            },
+            {
+              "day": 0,
+              "hour": 1
+            }
+          ]
+        },
+        {
+          "quota": 20,
+          "sessionHours": [
+            {
+              "day": 1,
+              "hour": 2
+            },
+            {
+              "day": 1,
+              "hour": 3
+            }
+          ]
+        },
+        {
+          "quota": 20,
+          "sessionHours": [
+            {
+              "day": 2,
+              "hour": 0
+            },
+            {
+              "day": 2,
+              "hour": 1
+            }
+          ]
+        },
+        {
+          "quota": 20,
+          "sessionHours": [
+            {
+              "day": 4,
+              "hour": 5
+            },
+            {
+              "day": 4,
+              "hour": 6
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 2,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Türk Dili II",
+      "courseCode": "TRD122",
+      "credit": 2,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 6,
+              "hour": 8
+            },
+            {
+              "day": 6,
+              "hour": 9
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 2,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Discrete Computational Structures",
+      "courseCode": "CSE2023",
+      "credit": 6,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 0,
+              "hour": 4
+            },
+            {
+              "day": 0,
+              "hour": 5
+            },
+            {
+              "day": 2,
+              "hour": 7
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 3,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Data Structures",
+      "courseCode": "CSE2225",
+      "credit": 7,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 0,
+              "hour": 6
+            },
+            {
+              "day": 2,
+              "hour": 4
+            },
+            {
+              "day": 2,
+              "hour": 5
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 3,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Engineering Economy",
+      "courseCode": "ECON2004",
+      "credit": 4,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 1,
+              "hour": 8
+            },
+            {
+              "day": 1,
+              "hour": 9
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 3,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Electric Circuits",
+      "courseCode": "EE2031",
+      "credit": 5,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 1,
+              "hour": 4
+            },
+            {
+              "day": 1,
+              "hour": 5
+            },
+            {
+              "day": 3,
+              "hour": 5
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 3,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Differential Equations",
+      "courseCode": "MATH2055",
+      "credit": 4,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 0,
+              "hour": 1
+            },
+            {
+              "day": 2,
+              "hour": 0
+            },
+            {
+              "day": 2,
+              "hour": 1
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 3,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Numerical Methods",
+      "courseCode": "MATH2059",
+      "credit": 4,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 1,
+              "hour": 6
+            },
+            {
+              "day": 1,
+              "hour": 7
+            },
+            {
+              "day": 3,
+              "hour": 6
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 3,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Analysis of Algorithms",
+      "courseCode": "CSE2246",
+      "credit": 6,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 3,
+              "hour": 4
+            },
+            {
+              "day": 5,
+              "hour": 5
+            },
+            {
+              "day": 5,
+              "hour": 6
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 4,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Systems Programming",
+      "courseCode": "CSE2138",
+      "credit": 7,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 40,
+          "sessionHours": [
+            {
+              "day": 0,
+              "hour": 5
+            },
+            {
+              "day": 1,
+              "hour": 4
+            }
+          ]
+        },
+        {
+          "quota": 40,
+          "sessionHours": [
+            {
+              "day": 2,
+              "hour": 2
+            },
+            {
+              "day": 2,
+              "hour": 3
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 4,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Electronics",
+      "courseCode": "EE2032",
+      "credit": 5,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 40,
+          "sessionHours": [
+            {
+              "day": 2,
+              "hour": 5
+            },
+            {
+              "day": 2,
+              "hour": 6
+            }
+          ]
+        },
+        {
+          "quota": 40,
+          "sessionHours": [
+            {
+              "day": 3,
+              "hour": 8
+            },
+            {
+              "day": 3,
+              "hour": 9
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 4,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Introduction to Probability and Statistics",
+      "courseCode": "STAT2253",
+      "credit": 5,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 0,
+              "hour": 7
+            },
+            {
+              "day": 1,
+              "hour": 5
+            },
+            {
+              "day": 1,
+              "hour": 6
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 4,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Summer Practice I",
+      "courseCode": "CSE3000",
+      "credit": 10,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 280,
+          "sessionHours": [
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 5,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Digital Logic Design",
+      "courseCode": "CSE3215",
+      "credit": 6,
+      "preRequisiteCourse": [
+      ],
+      "courseSessions": [
+        {
+          "quota": 20,
+          "sessionHours": [
+            {
+              "day": 1,
+              "hour": 2
+            },
+            {
+              "day": 1,
+              "hour": 3
+            },
+            {
+              "day": 3,
+              "hour": 1
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 5,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Operating Systems",
+      "courseCode": "CSE3033",
+      "credit": 7,
+      "preRequisiteCourse": [
+        "CSE2225"
+      ],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 0,
+              "hour": 3
+            },
+            {
+              "day": 4,
+              "hour": 2
+            },
+            {
+              "day": 4,
+              "hour": 3
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 5,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Database Systems",
+      "courseCode": "CSE3055",
+      "credit": 7,
+      "preRequisiteCourse": [
+        "CSE2225"
+      ],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 2,
+              "hour": 3
+            },
+            {
+              "day": 2,
+              "hour": 4
+            },
+            {
+              "day": 4,
+              "hour": 6
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 5,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Object-Oriented Software Design",
+      "courseCode": "CSE3063",
+      "credit": 5,
+      "preRequisiteCourse": [
+        "CSE1242"
+      ],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 0,
+              "hour": 1
+            },
+            {
+              "day": 0,
+              "hour": 2
+            },
+            {
+              "day": 1,
+              "hour": 1
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 5,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Modelling and Discrete Simulation",
+      "courseCode": "IE3081",
+      "credit": 4,
+      "preRequisiteCourse": [
+      ],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 3,
+              "hour": 2
+            },
+            {
+              "day": 3,
+              "hour": 3
+            },
+            {
+              "day": 4,
+              "hour": 1
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 5,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Summer Practice II",
+      "courseCode": "CSE4000",
+      "credit": 10,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 280,
+          "sessionHours": [
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 7,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Computer Networks",
+      "courseCode": "CSE4074",
+      "credit": 5,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 0,
+              "hour": 6
+            },
+            {
+              "day": 3,
+              "hour": 5
+            },
+            {
+              "day": 3,
+              "hour": 6
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 7,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Engineering Project I",
+      "courseCode": "CSE4297",
+      "credit": 5,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 6,
+              "hour": 2
+            },
+            {
+              "day": 6,
+              "hour": 3
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 165,
+      "courseSemester": 7,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "İş Sağlığı ve Güvenliği I",
+      "courseCode": "ISG121",
+      "credit": 2,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 6,
+              "hour": 4
+            },
+            {
+              "day": 6,
+              "hour": 5
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 7,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Introduction to Machine Learning",
+      "courseCode": "CSE4288",
+      "credit": 5,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 1,
+              "hour": 3
+            },
+            {
+              "day": 1,
+              "hour": 4
+            },
+            {
+              "day": 4,
+              "hour": 7
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 7,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Engineering Project II",
+      "courseCode": "CSE4298",
+      "credit": 5,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 6,
+              "hour": 2
+            },
+            {
+              "day": 6,
+              "hour": 3
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 165,
+      "courseSemester": 8,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "İş Sağlığı ve Güvenliği II",
+      "courseCode": "ISG122",
+      "credit": 2,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 6,
+              "hour": 7
+            },
+            {
+              "day": 6,
+              "hour": 8
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 8,
+      "courseType": "MANDATORY"
+    }
+  ]
+}
+

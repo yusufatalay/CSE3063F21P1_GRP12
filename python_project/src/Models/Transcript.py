@@ -3,7 +3,7 @@ from Semester import Semester
 
 
 class Transcript:
-# Note to the future: We should probably set these passed&failed variables in the constructor with the methods below
+    # Note to the future: We should probably set these passed&failed variables in the constructor with the methods below
 
     def __init__(self, totalCredits=0, gpa=0, passedCourses=None, failedCourses=None):
         self.totalCredits = totalCredits
@@ -12,7 +12,7 @@ class Transcript:
         if passedCourses is None:
             self.passedCourses = []
         elif passedCourses is not None:
-            self.passedCourses =    passedCourses 
+            self.passedCourses = passedCourses
 
         if failedCourses is None:
             self.failedCourses = []
@@ -53,7 +53,7 @@ class Transcript:
             if random.randint(1, 10) == 1:
                 self.addFailedCourse(course)
 
-    def generatePassedCourses(self, localCourses,failedCourses):
+    def generatePassedCourses(self, localCourses, failedCourses):
         for course in localCourses:
             if course not in failedCourses:
                 self.addPassedCourse(course)
@@ -67,13 +67,11 @@ class Transcript:
         if semester.semesterNo > 7:
             localCourseList.append(random.choice(teCourseList))
             localCourseList.append(random.choice(nteCourseList))
-            
 
         self.failedCourses = self.generateFailedCourses(localCourseList)
-        self.passedCourses = self.generatePassedCourses(localCourseList,failedCourses=self.failedCourses)
+        self.passedCourses = self.generatePassedCourses(
+            localCourseList, failedCourses=self.failedCourses)
         totalCredits = self.findGivenCredits()
-
-        
 
         gpa = self.calculateGPA()
         return Transcript(totalCredits, gpa, self.passedCourses, self.failedCourses)
