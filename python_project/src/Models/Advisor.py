@@ -1,6 +1,3 @@
-from Student import Student
-from Course import Course
-from CourseSession import CourseSession
 
 
 class Advisor:
@@ -8,7 +5,7 @@ class Advisor:
     def __init__(self, name, studentList=None):
         self.name = name
         if studentList is None:
-            self.students = []
+            self.studentList = []
         else:
             self.studentList = studentList
 
@@ -21,7 +18,7 @@ class Advisor:
             print("-->", stu.name)
 
     # Checking the eligibility of course quota
-    def checkCourseQuota(self, course: Course, selectedSession: CourseSession, stu: Student):
+    def checkCourseQuota(self, course, selectedSession, stu):
         if selectedSession.numberOfStudents < selectedSession.courseQuota:
             selectedSession.numberOfStudents += 1
             return True
@@ -32,7 +29,7 @@ class Advisor:
             return False
 
     # Checking the eligibility of courses' prerequisite
-    def checkPreRequisite(course: Course, stu: Student):
+    def checkPreRequisite(self,course, stu):
         for failedCourse in stu.transcript.failedCourses:
             if failedCourse.courseCode in course.preRequisisteCourses:
                 denialMessage = f"The system didn't allow {course.courseCode} student failed prerequisites {failedCourse.courseCode}"
@@ -42,10 +39,10 @@ class Advisor:
         return True
 
     # Checking the eligibility of courses' session on students' schedule
-    def checkCollides(selectedCourse: Course, selectedSession: CourseSession, stu: Student):
+    def checkCollides(self,selectedCourse, selectedSession, stu):
         collideCounter = 0
 
-        for session in stu.selectSessions:
+        for session in stu.takenSessions:
             for i in range(7):
                 for j in range(10):
                     if selectedSession.courseHour[i][j] and session.courseHour[i][j]:
@@ -59,7 +56,7 @@ class Advisor:
         return True
 
     # Checking the eligibility of courses' session on students' schedule
-    def checkTotalCredits(course: Course, stu: Student):
+    def checkTotalCredits(self,course, stu):
         if stu.transcript.totalCredits >= course.requiredCredits:
             return True
         else:
@@ -68,18 +65,18 @@ class Advisor:
             stu.addDenialMessage(denialMessage)
             return False
 
-    def checkTELimitation(course: Course, stu: Student):
+    def checkTELimitation(self,course, stu):
         counter = 0
         for takenCourse in stu.takenCourses:
             if takenCourse.courseType == "TE":
                 counter += 1
 
-        if counter == 1 and stu.semesterName == "FALL":
+        if counter == 1 and stu.semester.semesterName == "FALL":
             denialMessage = f"Advisor didn't approve {course.courseType} {course.courseCode} because student already took 1 TE and in FALL semester only 1 TE can be taken."
             print(f"{stu.studentID} - {stu.name} : {denialMessage}")
             stu.addDenialMessage(denialMessage)
             return False
-        elif counter == 3 and stu.semesterName == "SPRING":
+        elif counter == 3 and stu.semester.semesterName == "SPRING":
             denialMessage = f"Advisor didn't approve {course.courseType} {course.courseCode} because student already took 3 TEs and in SPRING semester only 3 TEs can be taken."
             print(f"{stu.studentID} - {stu.name} : {denialMessage}")
             stu.addDenialMessage(denialMessage)
@@ -87,8 +84,8 @@ class Advisor:
         else:
             return True
 
-    def checkFTELimitation(course: Course, stu: Student):
-        if course.courseType == "FTE" and stu.semesterName == "FALL":
+    def checkFTELimitation(self,course, stu):
+        if course.courseType == "FTE" and stu.semester.semesterName == "FALL":
             denialMessage = f"Advisor didn't approve FTE {course.courseCode} because students can't take FTE in fall semester unless they are graduating this semester."
             print(f"{stu.studentID} - {stu.name} : {denialMessage}")
             stu.addDenialMessage(denialMessage)
@@ -96,7 +93,7 @@ class Advisor:
         else:
             return True
 
-    def approveCourse(self, selectedCourse: Course, selectedSession: CourseSession, stu: Student):
+    def approveCourse(self, stu, selectedCourse, selectedSession):
         if self.checkCourseQuota(selectedCourse, selectedSession, stu) and self.checkPreRequisite(selectedCourse, stu) and self.checkCollides(selectedCourse, selectedSession, stu) and self.checkTotalCredits(selectedCourse, stu):
             if selectedCourse.courseType == "TE":
                 if not self.checkTELimitation(selectedCourse, stu):

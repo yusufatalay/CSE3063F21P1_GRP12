@@ -3,3 +3,5 @@ out/
 .idea/
 iteration1/Students/
 iteration2/Students/
+python_projects/Students/
+python_projects/src/__pycache__/

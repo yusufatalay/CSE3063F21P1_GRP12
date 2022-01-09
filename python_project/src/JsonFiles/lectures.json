@@ -1,7 +1,7 @@
 {
   "courses": [
     {
-      "courseName": "Atatürk İlkeleri ve İnkılap Tarihi I",
+      "courseName": "Ataturk Ilkeleri ve Inkilap Tarihi I",
       "courseCode": "ATA121",
       "credit": 2,
       "preRequisiteCourse": [],
@@ -232,7 +232,7 @@
       "courseType": "MANDATORY"
     },
     {
-      "courseName": "Türk Dili I",
+      "courseName": "Turk Dili I",
       "courseCode": "TRD121",
       "credit": 2,
       "preRequisiteCourse": [],
@@ -256,7 +256,7 @@
       "courseType": "MANDATORY"
     },
     {
-      "courseName": "Atatürk İlkeleri ve İnkılap Tarihi II",
+      "courseName": "Ataturk Ilkeleri ve Inkilap Tarihi II",
       "courseCode": "ATA122",
       "credit": 2,
       "preRequisiteCourse": [],
@@ -459,7 +459,7 @@
       "courseType": "MANDATORY"
     },
     {
-      "courseName": "Türk Dili II",
+      "courseName": "Turk Dili II",
       "courseCode": "TRD122",
       "credit": 2,
       "preRequisiteCourse": [],
@@ -1009,7 +1009,7 @@
       "courseType": "MANDATORY"
     },
     {
-      "courseName": "İş Sağlığı ve Güvenliği I",
+      "courseName": "Is Sagligi ve Guvenligi I",
       "courseCode": "ISG121",
       "credit": 2,
       "preRequisiteCourse": [],
@@ -1085,7 +1085,7 @@
       "courseType": "MANDATORY"
     },
     {
-      "courseName": "İş Sağlığı ve Güvenliği II",
+      "courseName": "Is Sagligi ve Guvenligi II",
       "courseCode": "ISG122",
       "credit": 2,
       "preRequisiteCourse": [],

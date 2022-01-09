@@ -1,9 +1,10 @@
 import json
+from Controller import createStudents
 
 
-def maim():
-    pass
+def main():
+    createStudents()
 
 
 if __name__ == "__main__":
-    maim()
+    main()

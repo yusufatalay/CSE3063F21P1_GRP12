@@ -1,5 +1,6 @@
 import json
 from Models.Course import Course
+from Models.CourseSession import CourseSession
 
 
 def read_json(file_name):
@@ -18,8 +19,11 @@ def createCourses(fileName: str, listName: str):
     courseList = []
 
     for courseRaw in courseJsonList:
+        courseSessions = []
+        for session in courseRaw["courseSessions"]:
+            courseSessions.append(CourseSession(session))
         course = Course(courseRaw["courseName"], courseRaw["courseCode"], courseRaw["credit"], courseRaw["requiredCredits"],
-                        courseRaw["courseSemester"], courseRaw["courseType"], courseRaw["preRequisiteCourse"], courseRaw["courseSessions"])
+                        courseRaw["courseSemester"], courseRaw["courseType"], courseRaw["preRequisiteCourse"], courseSessions)
         courseList.append(course)
     return courseList
 

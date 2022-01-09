@@ -1,6 +1,6 @@
 class Course:
 
-    def __init__(self, courseName, courseCode, credit, requiredCredits, courseSemester, courseType, preRequisisteCourses=None, couseSessions=None):
+    def __init__(self, courseName, courseCode, credit, requiredCredits, courseSemester, courseType, preRequisisteCourses=None, courseSessions=None):
         self.courseName = courseName
         self.courseCode = courseCode
         self.credit = credit
@@ -13,10 +13,10 @@ class Course:
         else:
             self.preRequisisteCourses = preRequisisteCourses
 
-        if couseSessions is None:
-            self.couseSessions = []
+        if courseSessions is None:
+            self.courseSessions = []
         else:
-            self.couseSessions = couseSessions
+            self.courseSessions = courseSessions
 
     def __str__(self):
-        return f"CourseName: {self.courseName} --Course Code: {self.courseCode} --Credit: {self.credit}"
+        return f"{self.courseName} --Course Code: {self.courseCode} --Credit: {self.credit}"

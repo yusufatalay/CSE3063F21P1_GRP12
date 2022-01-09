@@ -1,10 +1,9 @@
 import random
-from Advisor import Advisor
 
 
 class Student:
 
-    def __init__(self, name, studentID, semester, advisor: Advisor, transcript, takenCourses=None, takenSessions=None, denialMessages=None):
+    def __init__(self, name, studentID, semester, advisor, transcript, takenCourses=None, takenSessions=None, denialMessages=None):
         # Note to the reader, variables defined in the __init__ are belong to the object itself. The ones outside are belong to the class.
         self.name = name
         self.studentID = studentID
@@ -46,7 +45,7 @@ class Student:
         for _course in allCourses:
             # If the selected course's courseSemester equals the student's current semester
             # we add the course.
-            if (self.semester == _course.semester):
+            if (self.semester == _course.courseSemester):
                 courses.append(_course)
 
         tempTECourses = teCourses.copy()
@@ -74,7 +73,7 @@ class Student:
             courses.append(nteCourses[rndIndex])
 
         # Add the courses that student has failed.
-        courses = self.failedCourses + courses
+        courses = self.transcript.failedCourses + courses
 
         return courses
 
@@ -82,8 +81,8 @@ class Student:
         sessions = []
 
         for i in range(0, len(courses)):
-            randomSession = courses[i].sessions[random.randint(
-                0, len(courses[i].sessions) - 1)]
+            randomSession = courses[i].courseSessions[random.randint(
+                0, len(courses[i].courseSessions) - 1)]
             sessions.append(randomSession)
         return sessions
 
@@ -96,7 +95,7 @@ class Student:
             allCourses, teCourses, nteCourses, fteCourses)
         selectedSessions = self.selectSessions(selectedCourses)
 
-        for course, session in selectedCourses, selectedSessions:
+        for course, session in zip(selectedCourses, selectedSessions):
             if self.sendToApproval(course, session):
                 self.addCourse(course)
                 self.addSession(session)

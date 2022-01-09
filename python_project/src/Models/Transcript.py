@@ -1,9 +1,7 @@
 import random
-from Semester import Semester
-
 
 class Transcript:
-    # Note to the future: We should probably set these passed&failed variables in the constructor with the methods below
+    # Note to the future: We should probably set these passed and failed variables in the constructor with the methods below
 
     def __init__(self, totalCredits=0, gpa=0, passedCourses=None, failedCourses=None):
         self.totalCredits = totalCredits
@@ -53,14 +51,14 @@ class Transcript:
             if random.randint(1, 10) == 1:
                 self.addFailedCourse(course)
 
-    def generatePassedCourses(self, localCourses, failedCourses):
+    def generatePassedCourses(self, localCourses):
         for course in localCourses:
-            if course not in failedCourses:
+            if course not in self.failedCourses:
                 self.addPassedCourse(course)
 
     # mandatoryCourseList has past semesters' courses that are mandatory.
-    def generateTranscript(self, semester: Semester, mandatoryCourseList=None, teCourseList=None, nteCourseList=None):
-        localCourseList = mandatoryCourseList.copy()
+    def generateTranscript(self, semester, mandatoryCourseList=None, teCourseList=None, nteCourseList=None):
+        localCourseList = mandatoryCourseList[:]
         if semester.semesterNo > 2:
             localCourseList.append(random.choice(nteCourseList))
 
@@ -68,10 +66,7 @@ class Transcript:
             localCourseList.append(random.choice(teCourseList))
             localCourseList.append(random.choice(nteCourseList))
 
-        self.failedCourses = self.generateFailedCourses(localCourseList)
-        self.passedCourses = self.generatePassedCourses(
-            localCourseList, failedCourses=self.failedCourses)
-        totalCredits = self.findGivenCredits()
-
-        gpa = self.calculateGPA()
-        return Transcript(totalCredits, gpa, self.passedCourses, self.failedCourses)
+        self.generateFailedCourses(localCourseList)
+        self.generatePassedCourses(localCourseList)
+        self.totalCredits = self.findGivenCredits()
+        self.gpa = self.calculateGPA()

@@ -1,15 +1,12 @@
+import datetime
 from Models.Student import Student
-from Models.Advisor import Advisor
 from Models.StudentID import StudentID
 from Models.Transcript import Transcript
-from Models.Semester import Semester
-
-import datetime
 
 
 class StudentCreator:
 
-    def __init__(self, semester: Semester, advisor: Advisor, takenCourses: None, teCourses: None, nteCourses: None):
+    def __init__(self, semester, advisor, takenCourses: None, teCourses: None, nteCourses: None):
         self.semester = semester
         self.advisor = advisor
 
@@ -37,7 +34,8 @@ class StudentCreator:
 
     def createRandomStudent(self, index: int, name: str):
         studentID = self.generateStudentID(index)
-        transcript = Transcript().generateTranscript(
+        transcript = Transcript()
+        transcript.generateTranscript(
             self.semester, self.takenCourses, self.teCourses, self.nteCourses)
 
         return Student(name, studentID, self.semester, self.advisor, transcript)

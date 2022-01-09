@@ -8,5 +8,3 @@ class Semester:
         elif semesterNo % 2 == 0:
             self.semesterName = "SPRING"
 
-    def __eq__(self, object):
-        return self.semesterNo == object.semesterNo
