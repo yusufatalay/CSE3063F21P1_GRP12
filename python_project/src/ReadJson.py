@@ -1,4 +1,5 @@
 import json
+from Models.Course import Course
 
 
 def read_json(file_name):
@@ -6,6 +7,10 @@ def read_json(file_name):
         data = json.load(file)
     return data
 
+def createNames(fileName: str):
+    nameJsonList = read_json(fileName)
+    nameList = nameJsonList["names"]
+    return nameList
 
 def createCourses(fileName: str, listName: str):
     courseJsonList = read_json(fileName)[listName]

@@ -1,8 +1,8 @@
-from ..Models.Student import Student
-from ..Models.Advisor import Advisor
-from ..Models.Semester import Semester
-from ..Models.StudentID import StudentID
-from ..Models.Transcript import Transcript
+from Models.Student import Student
+from Models.Advisor import Advisor
+from Models.StudentID import StudentID
+from Models.Transcript import Transcript
+from Models.Semester import Semester
 
 import datetime
 
