@@ -1,8 +1,8 @@
 import random
-
+from Advisor import Advisor
 class Student:
 
-    def __init__(self, name, studentID, semester, advisor, transcript, takenCourses=None, takenSessions=None, denialMessages=None):
+    def __init__(self, name, studentID, semester, advisor:Advisor, transcript, takenCourses=None, takenSessions=None, denialMessages=None):
         # Note to the reader, variables defined in the __init__ are belong to the object itself. The ones outside are belong to the class.
         self.name = name
         self.studentID = studentID
@@ -90,9 +90,8 @@ class Student:
         selectedSessions = self.selectSessions(selectedCourses)
 
         # TODO: send Selected courses and sessions to the approval process. ONE BY ONE
+        # call sendToApproval here and add the approved courses to the student's taken courses.
 
     def sendToApproval(self, course, session):
-        # advisor should return a boolean and a message as a response
-        # if the boolean is true then the message should be empty.
-        # if the boolean is false then the message should be the denial message.
-        pass
+        self.advisor.approveCourse(self, course, session)
+        

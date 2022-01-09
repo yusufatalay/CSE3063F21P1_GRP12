@@ -57,7 +57,7 @@ public class Advisor extends Person {
         return true;
     }
 
-    private boolean checkPreRequisite(Course course, Student student) {
+    private boolean checkPreRequisite(Course course, Student student){
         /* In this method we get current course that student wants to register.
         *  Then we check if the course has a prerequisite course that is in student's failed courses.
         *  If so we provide a denial message to student. */

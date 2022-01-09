@@ -32,7 +32,6 @@ class Transcript:
         for course in self.passedCourses:
             totalCredits += course.credit
 
-        # To Yasin: Are we supposed to add failed courses' credits? Since the failed courses are not counted in the
         for course in self.failedCourses:
             totalCredits += course.credit
 
@@ -49,12 +48,12 @@ class Transcript:
         return score / takenCredits
 
     # generateFailedCourses() is used to generate failed courses randomly and adds them to the locel list.
-    def generateFailedCourses(self, semester: Semester, localCourseList=None):
+    def generateFailedCourses(self, localCourseList=None):
         for course in localCourseList:
-            if random.randint(0, 1) == 1:
+            if random.randint(1, 10) == 1:
                 self.addFailedCourse(course)
 
-    def generatePassedCourses(self, semester: Semester, localCourses,failedCourses):
+    def generatePassedCourses(self, localCourses,failedCourses):
         for course in localCourses:
             if course not in failedCourses:
                 self.addPassedCourse(course)
@@ -62,16 +61,19 @@ class Transcript:
     # mandatoryCourseList has past semesters' courses that are mandatory.
     def generateTranscript(self, semester: Semester, mandatoryCourseList=None, teCourseList=None, nteCourseList=None):
         localCourseList = mandatoryCourseList.copy()
-        self.failedCourses = self.generateFailedCourses(semester, localCourseList)
-        self.passedCourses = self.generatePassedCourses(semester, localCourseList,failedCourses=self.failedCourses)
-        totalCredits = self.findGivenCredits()
-        gpa = self.calculateGPA()
-
         if semester.semesterNo > 2:
             localCourseList.append(random.choice(nteCourseList))
 
         if semester.semesterNo > 7:
             localCourseList.append(random.choice(teCourseList))
             localCourseList.append(random.choice(nteCourseList))
+            
 
+        self.failedCourses = self.generateFailedCourses(localCourseList)
+        self.passedCourses = self.generatePassedCourses(localCourseList,failedCourses=self.failedCourses)
+        totalCredits = self.findGivenCredits()
+
+        
+
+        gpa = self.calculateGPA()
         return Transcript(totalCredits, gpa, self.passedCourses, self.failedCourses)
