@@ -1,5 +1,6 @@
 import random
 
+
 class Transcript:
     # Note to the future: We should probably set these passed and failed variables in the constructor with the methods below
 
@@ -43,12 +44,12 @@ class Transcript:
             randomGrade = random.randint(0, 6) / 2 + 1
             score += randomGrade * course.credit
 
-        return score / takenCredits
+        return round(score / takenCredits, 2)
 
     # generateFailedCourses() is used to generate failed courses randomly and adds them to the locel list.
-    def generateFailedCourses(self, localCourseList=None):
+    def generateFailedCourses(self, failRate, localCourseList=None):
         for course in localCourseList:
-            if random.randint(1, 10) == 1:
+            if random.randint(1, 100) <= failRate:
                 self.addFailedCourse(course)
 
     def generatePassedCourses(self, localCourses):
@@ -57,7 +58,14 @@ class Transcript:
                 self.addPassedCourse(course)
 
     # mandatoryCourseList has past semesters' courses that are mandatory.
-    def generateTranscript(self, semester, mandatoryCourseList=None, teCourseList=None, nteCourseList=None):
+    def generateTranscript(
+        self,
+        failRate,
+        semester,
+        mandatoryCourseList=None,
+        teCourseList=None,
+        nteCourseList=None,
+    ):
         localCourseList = mandatoryCourseList[:]
         if semester.semesterNo > 2:
             localCourseList.append(random.choice(nteCourseList))
@@ -66,7 +74,7 @@ class Transcript:
             localCourseList.append(random.choice(teCourseList))
             localCourseList.append(random.choice(nteCourseList))
 
-        self.generateFailedCourses(localCourseList)
+        self.generateFailedCourses(failRate, localCourseList)
         self.generatePassedCourses(localCourseList)
         self.totalCredits = self.findGivenCredits()
         self.gpa = self.calculateGPA()

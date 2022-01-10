@@ -3,5 +3,7 @@ out/
 .idea/
 iteration1/Students/
 iteration2/Students/
-python_projects/Students/
-python_projects/src/__pycache__/
+python_project/Students/
+python_project/src/__pycache__/
+python_project/src/Models/__pycache__/
+*.class

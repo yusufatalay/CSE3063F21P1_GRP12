@@ -7,9 +7,10 @@ from Models.Semester import Semester
 from ReadJson import *
 from StudentCreator import StudentCreator
 
-def getPastCourses(fullCourseList , semester):
+
+def getPastCourses(fullCourseList, semester):
     takenlist = list()
-    
+
     for course in fullCourseList:
         if course.courseSemester < semester.semesterNo:
             takenlist.append(course)
@@ -17,17 +18,19 @@ def getPastCourses(fullCourseList , semester):
         break
     return takenlist
 
+
 def createDirectories():
-    path = os.path.join(os.path.abspath("./python_project"),"Students")
-    
+    path = os.path.join(os.path.abspath("./python_project"), "Students")
+
     if os.path.exists(path):
-        shutil.rmtree(path) 
-        
-    os.mkdir(path)     
-    os.mkdir(os.path.join(os.path.abspath("./python_project/Students"),"Freshman"))
-    os.mkdir(os.path.join(os.path.abspath("./python_project/Students"),"Sophomore"))
-    os.mkdir(os.path.join(os.path.abspath("./python_project/Students"),"Junior"))
-    os.mkdir(os.path.join(os.path.abspath("./python_project/Students"),"Senior"))
+        shutil.rmtree(path)
+
+    os.mkdir(path)
+    os.mkdir(os.path.join(os.path.abspath("./python_project/Students"), "Freshman"))
+    os.mkdir(os.path.join(os.path.abspath("./python_project/Students"), "Sophomore"))
+    os.mkdir(os.path.join(os.path.abspath("./python_project/Students"), "Junior"))
+    os.mkdir(os.path.join(os.path.abspath("./python_project/Students"), "Senior"))
+
 
 def createStudentFile(student):
     studentFile = {
@@ -41,18 +44,27 @@ def createStudentFile(student):
         "failedCourses": [code.__str__() for code in student.transcript.failedCourses],
     }
 
-    if student.semester.semesterNo in (1,2):
-        with open(f"python_project/Students/Freshman/{student.studentID}.json", 'w') as file:
+    if student.semester.semesterNo in (1, 2):
+        with open(
+            f"python_project/Students/Freshman/{student.studentID}.json", "w"
+        ) as file:
             json.dump(studentFile, file)
-    elif student.semester.semesterNo in (3,4):
-        with open(f"python_project/Students/Sophomore/{student.studentID}.json", 'w') as file:
+    elif student.semester.semesterNo in (3, 4):
+        with open(
+            f"python_project/Students/Sophomore/{student.studentID}.json", "w"
+        ) as file:
             json.dump(studentFile, file)
-    elif student.semester.semesterNo in (5,6):
-        with open(f"python_project/Students/Junior/{student.studentID}.json", 'w') as file:
-            json.dump(studentFile, file)                
-    elif student.semester.semesterNo in (7,8):
-        with open(f"python_project/Students/Senior/{student.studentID}.json", 'w') as file:
+    elif student.semester.semesterNo in (5, 6):
+        with open(
+            f"python_project/Students/Junior/{student.studentID}.json", "w"
+        ) as file:
             json.dump(studentFile, file)
+    elif student.semester.semesterNo in (7, 8):
+        with open(
+            f"python_project/Students/Senior/{student.studentID}.json", "w"
+        ) as file:
+            json.dump(studentFile, file)
+
 
 def createStudents():
     nameArray = createNames("names.json")
@@ -66,8 +78,10 @@ def createStudents():
     nteCourses = createCourses("electives.json", "technicalElectives")
     teCourses = createCourses("electives.json", "nonTechnicalElectives")
     fteCourses = createCourses("electives.json", "facultyTechnicalElectives")
-    
+
     createDirectories()
+    numberOfStudents = read_json("input.json")["numberOfStudentsPerSemester"]
+    failRate = read_json("input.json")["failRatePercent"]
 
     for i in range(4):
         advisorName = random.choice(nameArray)
@@ -77,14 +91,17 @@ def createStudents():
         courseList = getPastCourses(mandatoryCourses, semester)
 
         advisor = Advisor(advisorName)
-        studentCreator = StudentCreator(semester, advisor, mandatoryCourses, teCourses, nteCourses)
+        studentCreator = StudentCreator(
+            semester, advisor, failRate, courseList, teCourses, nteCourses
+        )
 
-        for j in range(70):
+        for j in range(numberOfStudents):
             studentName = random.choice(nameArray)
             nameArray.remove(studentName)
 
             stu = studentCreator.createRandomStudent(j + 1, studentName)
-            stu.selectAndEnrollCourses(mandatoryCourses,teCourses,nteCourses,fteCourses)
+            stu.selectAndEnrollCourses(
+                mandatoryCourses, teCourses, nteCourses, fteCourses
+            )
             advisor.addStudent(stu)
             createStudentFile(stu)
-        

@@ -5,10 +5,18 @@ from Models.Transcript import Transcript
 
 
 class StudentCreator:
-
-    def __init__(self, semester, advisor, takenCourses: None, teCourses: None, nteCourses: None):
+    def __init__(
+        self,
+        semester,
+        advisor,
+        failRate,
+        takenCourses: None,
+        teCourses: None,
+        nteCourses: None,
+    ):
         self.semester = semester
         self.advisor = advisor
+        self.failRate = failRate
 
         if takenCourses is None:
             self.takenCourses = []
@@ -27,7 +35,7 @@ class StudentCreator:
 
     def generateStudentID(self, index: int):
         department = "1501"
-        entryYear = str(datetime.date.today().year)[2:]
+        entryYear = str(datetime.date.today().year - self.semester.semesterNo // 2)[2:]
         entryOrder = str(index).zfill(3)
 
         return StudentID(department, entryYear, entryOrder)
@@ -36,6 +44,11 @@ class StudentCreator:
         studentID = self.generateStudentID(index)
         transcript = Transcript()
         transcript.generateTranscript(
-            self.semester, self.takenCourses, self.teCourses, self.nteCourses)
+            self.failRate,
+            self.semester,
+            self.takenCourses,
+            self.teCourses,
+            self.nteCourses,
+        )
 
         return Student(name, studentID, self.semester, self.advisor, transcript)
