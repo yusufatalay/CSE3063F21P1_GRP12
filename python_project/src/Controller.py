@@ -1,11 +1,9 @@
 import random
-import os
-import shutil
 from Models.Advisor import Advisor
-from Models.Course import Course
 from Models.Semester import Semester
-from ReadJson import *
 from StudentCreator import StudentCreator
+from ReadJson import *
+from WriteJson import *
 
 
 def getPastCourses(fullCourseList, semester):
@@ -17,19 +15,6 @@ def getPastCourses(fullCourseList, semester):
             continue
         break
     return takenlist
-
-
-def createDirectories():
-    path = os.path.join(os.path.abspath("./python_project"), "Students")
-
-    if os.path.exists(path):
-        shutil.rmtree(path)
-
-    os.mkdir(path)
-    os.mkdir(os.path.join(os.path.abspath("./python_project/Students"), "Freshman"))
-    os.mkdir(os.path.join(os.path.abspath("./python_project/Students"), "Sophomore"))
-    os.mkdir(os.path.join(os.path.abspath("./python_project/Students"), "Junior"))
-    os.mkdir(os.path.join(os.path.abspath("./python_project/Students"), "Senior"))
 
 
 def createStudentFile(student):
@@ -45,25 +30,13 @@ def createStudentFile(student):
     }
 
     if student.semester.semesterNo in (1, 2):
-        with open(
-            f"python_project/Students/Freshman/{student.studentID}.json", "w"
-        ) as file:
-            json.dump(studentFile, file)
+        write_json(studentFile, f"Freshman/{student.studentID}.json")
     elif student.semester.semesterNo in (3, 4):
-        with open(
-            f"python_project/Students/Sophomore/{student.studentID}.json", "w"
-        ) as file:
-            json.dump(studentFile, file)
+        write_json(studentFile, f"Sophomore/{student.studentID}.json")
     elif student.semester.semesterNo in (5, 6):
-        with open(
-            f"python_project/Students/Junior/{student.studentID}.json", "w"
-        ) as file:
-            json.dump(studentFile, file)
+        write_json(studentFile, f"Junior/{student.studentID}.json")
     elif student.semester.semesterNo in (7, 8):
-        with open(
-            f"python_project/Students/Senior/{student.studentID}.json", "w"
-        ) as file:
-            json.dump(studentFile, file)
+        write_json(studentFile, f"Senior/{student.studentID}.json")
 
 
 def createStudents():
