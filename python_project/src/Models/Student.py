@@ -59,7 +59,7 @@ class Student:
                 courses.append(_course)
 
         tempTECourses = teCourses.copy()
-        if self.semester == 7:
+        if self.semester.semesterNo == 7:
             rndCourseIndex = random.randint(0, len(teCourses) - 1)
             courses.append(teCourses[rndCourseIndex])
 
@@ -67,7 +67,7 @@ class Student:
             courses.append(nteCourses[rndCourseIndex])
 
         # if the student is in the last semester, we choose 3 TEs, 1 NTE and 1 FTE.
-        elif self.semester == 8:
+        elif self.semester.semesterNo == 8:
             for _ in range(3):  # this loop will run 3 times
                 rndIndex = random.randint(0, len(tempTECourses) - 1)
                 courses.append(tempTECourses[rndIndex])
@@ -78,7 +78,7 @@ class Student:
             rndIndex = random.randint(0, len(fteCourses) - 1)
             courses.append(fteCourses[rndIndex])
         # If the student is his/her second semester: we can add single nte course.
-        elif self.semester == 2:
+        elif self.semester.semesterNo == 2:
             rndIndex = random.randint(0, len(nteCourses) - 1)
             courses.append(nteCourses[rndIndex])
 
