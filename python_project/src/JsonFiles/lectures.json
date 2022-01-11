@@ -823,9 +823,7 @@
       "courseName": "Operating Systems",
       "courseCode": "CSE3033",
       "credit": 7,
-      "preRequisiteCourse": [
-        "CSE2225"
-      ],
+      "preRequisiteCourse": ["CSE2225"],
       "courseSessions": [
         {
           "quota": 70,
@@ -853,9 +851,7 @@
       "courseName": "Database Systems",
       "courseCode": "CSE3055",
       "credit": 7,
-      "preRequisiteCourse": [
-        "CSE2225"
-      ],
+      "preRequisiteCourse": ["CSE2225"],
       "courseSessions": [
         {
           "quota": 70,
@@ -883,9 +879,7 @@
       "courseName": "Object-Oriented Software Design",
       "courseCode": "CSE3063",
       "credit": 5,
-      "preRequisiteCourse": [
-        "CSE1242"
-      ],
+      "preRequisiteCourse": ["CSE1242"],
       "courseSessions": [
         {
           "quota": 70,
@@ -935,6 +929,198 @@
       ],
       "requiredCredits": 0,
       "courseSemester": 5,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Computer Organization",
+      "courseCode": "CSE3038",
+      "credit": 7,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 2,
+              "hour": 3
+            },
+            {
+              "day": 2,
+              "hour": 4
+            },
+            {
+              "day": 3,
+              "hour": 4
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 6,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Computer Organization",
+      "courseCode": "CSE3038",
+      "credit": 7,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 2,
+              "hour": 2
+            },
+            {
+              "day": 2,
+              "hour": 3
+            },
+            {
+              "day": 3,
+              "hour": 3
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 6,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Software Engineering",
+      "courseCode": "CSE3044",
+      "credit": 7,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 2,
+              "hour": 1
+            },
+            {
+              "day": 3,
+              "hour": 1
+            },
+            {
+              "day": 3,
+              "hour": 2
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 6,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Introduction to Signals and Systems",
+      "courseCode": "CSE3048",
+      "credit": 5,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 1,
+              "hour": 3
+            },
+            {
+              "day": 1,
+              "hour": 4
+            },
+            {
+              "day": 3,
+              "hour": 4
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 6,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Formal Languages and Automata Theory",
+      "courseCode": "CSE3264",
+      "credit": 5,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 0,
+              "hour": 3
+            },
+            {
+              "day": 0,
+              "hour": 4
+            },
+            {
+              "day": 4,
+              "hour": 1
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 6,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Operations Research",
+      "courseCode": "IE3235",
+      "credit": 4,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 0,
+              "hour": 1
+            },
+            {
+              "day": 0,
+              "hour": 2
+            },
+            {
+              "day": 1,
+              "hour": 2
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 6,
+      "courseType": "MANDATORY"
+    },
+    {
+      "courseName": "Technical Comm. and Entrepreneurship",
+      "courseCode": "COM2202",
+      "credit": 2,
+      "preRequisiteCourse": [],
+      "courseSessions": [
+        {
+          "quota": 70,
+          "sessionHours": [
+            {
+              "day": 4,
+              "hour": 6
+            },
+            {
+              "day": 4,
+              "hour": 7
+            }
+          ]
+        }
+      ],
+      "requiredCredits": 0,
+      "courseSemester": 6,
       "courseType": "MANDATORY"
     },
     {
