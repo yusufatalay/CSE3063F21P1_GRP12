@@ -960,34 +960,6 @@
       "courseType": "MANDATORY"
     },
     {
-      "courseName": "Computer Organization",
-      "courseCode": "CSE3038",
-      "credit": 7,
-      "preRequisiteCourse": [],
-      "courseSessions": [
-        {
-          "quota": 70,
-          "sessionHours": [
-            {
-              "day": 2,
-              "hour": 2
-            },
-            {
-              "day": 2,
-              "hour": 3
-            },
-            {
-              "day": 3,
-              "hour": 3
-            }
-          ]
-        }
-      ],
-      "requiredCredits": 0,
-      "courseSemester": 6,
-      "courseType": "MANDATORY"
-    },
-    {
       "courseName": "Software Engineering",
       "courseCode": "CSE3044",
       "credit": 7,
