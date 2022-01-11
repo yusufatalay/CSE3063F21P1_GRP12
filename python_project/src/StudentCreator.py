@@ -1,4 +1,4 @@
-import datetime
+import datetime, math
 from Models.Student import Student
 from Models.StudentID import StudentID
 from Models.Transcript import Transcript
@@ -35,7 +35,9 @@ class StudentCreator:
 
     def generateStudentID(self, index: int):
         department = "1501"
-        entryYear = str(datetime.date.today().year - self.semester.semesterNo // 2)[2:]
+        entryYear = str(
+            datetime.date.today().year - math.ceil(self.semester.semesterNo / 2)
+        )[2:]
         entryOrder = str(index).zfill(3)
 
         return StudentID(department, entryYear, entryOrder)

@@ -77,4 +77,8 @@ class Transcript:
         self.generateFailedCourses(failRate, localCourseList)
         self.generatePassedCourses(localCourseList)
         self.totalCredits = self.findGivenCredits()
-        self.gpa = self.calculateGPA()
+
+        if semester.semesterNo == 1:
+            self.gpa = 0
+        else:
+            self.gpa = self.calculateGPA()

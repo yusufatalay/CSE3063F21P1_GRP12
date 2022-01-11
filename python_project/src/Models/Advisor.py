@@ -1,7 +1,4 @@
-
-
 class Advisor:
-
     def __init__(self, name, studentList=None):
         self.name = name
         if studentList is None:
@@ -20,7 +17,6 @@ class Advisor:
     # Checking the eligibility of course quota
     def checkCourseQuota(self, course, selectedSession, stu):
         if selectedSession.numberOfStudents < selectedSession.courseQuota:
-            selectedSession.numberOfStudents += 1
             return True
         else:
             denialMessage = f"Student couldn't register for {course.courseCode}  because of the quota problem "
@@ -29,7 +25,7 @@ class Advisor:
             return False
 
     # Checking the eligibility of courses' prerequisite
-    def checkPreRequisite(self,course, stu):
+    def checkPreRequisite(self, course, stu):
         for failedCourse in stu.transcript.failedCourses:
             if failedCourse.courseCode in course.preRequisisteCourses:
                 denialMessage = f"The system didn't allow {course.courseCode} student failed prerequisites {failedCourse.courseCode}"
@@ -39,7 +35,7 @@ class Advisor:
         return True
 
     # Checking the eligibility of courses' session on students' schedule
-    def checkCollides(self,selectedCourse, selectedSession, stu):
+    def checkCollides(self, selectedCourse, selectedSession, stu):
         collideCounter = 0
 
         for session in stu.takenSessions:
@@ -47,16 +43,15 @@ class Advisor:
                 for j in range(10):
                     if selectedSession.courseHour[i][j] and session.courseHour[i][j]:
                         collideCounter += 1
-                        if (collideCounter > 1):
+                        if collideCounter > 1:
                             denialMessage = f"Advisor didn't approve {selectedCourse.courseCode} because of at least two hours collision with other courses in schedule"
-                            print(
-                                f"{stu.studentID} - {stu.name} : {denialMessage}")
+                            print(f"{stu.studentID} - {stu.name} : {denialMessage}")
                             stu.addDenialMessage(denialMessage)
                             return False
         return True
 
     # Checking the eligibility of courses' session on students' schedule
-    def checkTotalCredits(self,course, stu):
+    def checkTotalCredits(self, course, stu):
         if stu.transcript.totalCredits >= course.requiredCredits:
             return True
         else:
@@ -65,7 +60,7 @@ class Advisor:
             stu.addDenialMessage(denialMessage)
             return False
 
-    def checkTELimitation(self,course, stu):
+    def checkTELimitation(self, course, stu):
         counter = 0
         for takenCourse in stu.takenCourses:
             if takenCourse.courseType == "TE":
@@ -84,7 +79,7 @@ class Advisor:
         else:
             return True
 
-    def checkFTELimitation(self,course, stu):
+    def checkFTELimitation(self, course, stu):
         if course.courseType == "FTE" and stu.semester.semesterName == "FALL":
             denialMessage = f"Advisor didn't approve FTE {course.courseCode} because students can't take FTE in fall semester unless they are graduating this semester."
             print(f"{stu.studentID} - {stu.name} : {denialMessage}")
@@ -94,7 +89,12 @@ class Advisor:
             return True
 
     def approveCourse(self, stu, selectedCourse, selectedSession):
-        if self.checkCourseQuota(selectedCourse, selectedSession, stu) and self.checkPreRequisite(selectedCourse, stu) and self.checkCollides(selectedCourse, selectedSession, stu) and self.checkTotalCredits(selectedCourse, stu):
+        if (
+            self.checkCourseQuota(selectedCourse, selectedSession, stu)
+            and self.checkPreRequisite(selectedCourse, stu)
+            and self.checkCollides(selectedCourse, selectedSession, stu)
+            and self.checkTotalCredits(selectedCourse, stu)
+        ):
             if selectedCourse.courseType == "TE":
                 if not self.checkTELimitation(selectedCourse, stu):
                     return False

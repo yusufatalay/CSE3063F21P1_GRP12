@@ -784,8 +784,7 @@
       "courseSessions": [
         {
           "quota": 280,
-          "sessionHours": [
-          ]
+          "sessionHours": []
         }
       ],
       "requiredCredits": 0,
@@ -796,8 +795,7 @@
       "courseName": "Digital Logic Design",
       "courseCode": "CSE3215",
       "credit": 6,
-      "preRequisiteCourse": [
-      ],
+      "preRequisiteCourse": [],
       "courseSessions": [
         {
           "quota": 20,
@@ -915,8 +913,7 @@
       "courseName": "Modelling and Discrete Simulation",
       "courseCode": "IE3081",
       "credit": 4,
-      "preRequisiteCourse": [
-      ],
+      "preRequisiteCourse": [],
       "courseSessions": [
         {
           "quota": 70,
@@ -948,8 +945,7 @@
       "courseSessions": [
         {
           "quota": 280,
-          "sessionHours": [
-          ]
+          "sessionHours": []
         }
       ],
       "requiredCredits": 0,
@@ -1110,4 +1106,3 @@
     }
   ]
 }
-

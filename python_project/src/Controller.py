@@ -18,15 +18,21 @@ def getPastCourses(fullCourseList, semester):
 
 
 def createStudentFile(student):
+    schedule = scheduleFormat(student)
     studentFile = {
         "studentID": student.studentID.__str__(),
         "advisor": student.advisor.name,
         "name": student.name,
         "GPA": student.transcript.gpa,
-        "takenCourses": [code.__str__() for code in student.takenCourses],
-        "passedCourses": [code.__str__() for code in student.transcript.passedCourses],
+        "takenCourses": [course.__str__() for course in student.takenCourses],
+        "passedCourses": [
+            course.__str__() for course in student.transcript.passedCourses
+        ],
         "denialMessages": student.denialMessages,
-        "failedCourses": [code.__str__() for code in student.transcript.failedCourses],
+        "failedCourses": [
+            course.__str__() for course in student.transcript.failedCourses
+        ],
+        "schedule": schedule,
     }
 
     if student.semester.semesterNo in (1, 2):

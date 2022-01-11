@@ -2,14 +2,24 @@ import random
 
 
 class Student:
-
-    def __init__(self, name, studentID, semester, advisor, transcript, takenCourses=None, takenSessions=None, denialMessages=None):
+    def __init__(
+        self,
+        name,
+        studentID,
+        semester,
+        advisor,
+        transcript,
+        takenCourses=None,
+        takenSessions=None,
+        denialMessages=None,
+    ):
         # Note to the reader, variables defined in the __init__ are belong to the object itself. The ones outside are belong to the class.
         self.name = name
         self.studentID = studentID
         self.semester = semester
         self.advisor = advisor
         self.transcript = transcript
+        self.schedule = [[None for _ in range(10)] for _ in range(7)]
 
         if takenCourses is None:
             self.takenCourses = []
@@ -45,31 +55,31 @@ class Student:
         for _course in allCourses:
             # If the selected course's courseSemester equals the student's current semester
             # we add the course.
-            if (self.semester == _course.courseSemester):
+            if self.semester.semesterNo == _course.courseSemester:
                 courses.append(_course)
 
         tempTECourses = teCourses.copy()
-        if (self.semester == 7):
-            rndCourseIndex = random.randint(0, len(teCourses)-1)
+        if self.semester == 7:
+            rndCourseIndex = random.randint(0, len(teCourses) - 1)
             courses.append(teCourses[rndCourseIndex])
 
-            rndCourseIndex = random.randint(0, len(nteCourses)-1)
+            rndCourseIndex = random.randint(0, len(nteCourses) - 1)
             courses.append(nteCourses[rndCourseIndex])
 
         # if the student is in the last semester, we choose 3 TEs, 1 NTE and 1 FTE.
-        elif(self.semester == 8):
+        elif self.semester == 8:
             for _ in range(3):  # this loop will run 3 times
-                rndIndex = random.randint(0, len(tempTECourses)-1)
+                rndIndex = random.randint(0, len(tempTECourses) - 1)
                 courses.append(tempTECourses[rndIndex])
                 tempTECourses.remove(tempTECourses[rndIndex])
 
-            rndIndex = random.randint(0, len(nteCourses)-1)
+            rndIndex = random.randint(0, len(nteCourses) - 1)
             courses.append(nteCourses[rndIndex])
-            rndIndex = random.randint(0, len(fteCourses)-1)
+            rndIndex = random.randint(0, len(fteCourses) - 1)
             courses.append(fteCourses[rndIndex])
         # If the student is his/her second semester: we can add single nte course.
-        elif(self.semester == 2):
-            rndIndex = random.randint(0, len(nteCourses)-1)
+        elif self.semester == 2:
+            rndIndex = random.randint(0, len(nteCourses) - 1)
             courses.append(nteCourses[rndIndex])
 
         # Add the courses that student has failed.
@@ -81,18 +91,21 @@ class Student:
         sessions = []
 
         for i in range(0, len(courses)):
-            randomSession = courses[i].courseSessions[random.randint(
-                0, len(courses[i].courseSessions) - 1)]
+            randomSession = courses[i].courseSessions[
+                random.randint(0, len(courses[i].courseSessions) - 1)
+            ]
             sessions.append(randomSession)
         return sessions
 
         # this method is not returning any value because the sessions are being added to the student object.
+
     # TODO: check every course for each condition one by one. add or not add them according to the result.
     # allCourses is all the courses in the semester.
     def selectAndEnrollCourses(self, allCourses, teCourses, nteCourses, fteCourses):
         # select courses from the json file
         selectedCourses = self.selectCourses(
-            allCourses, teCourses, nteCourses, fteCourses)
+            allCourses, teCourses, nteCourses, fteCourses
+        )
         selectedSessions = self.selectSessions(selectedCourses)
 
         for course, session in zip(selectedCourses, selectedSessions):
@@ -100,8 +113,10 @@ class Student:
                 self.addCourse(course)
                 self.addSession(session)
 
-        # TODO: send Selected courses and sessions to the approval process. ONE BY ONE
-        # call sendToApproval here and add the approved courses to the student's taken courses.
+                for i in range(7):
+                    for j in range(10):
+                        if session.courseHour[i][j]:
+                            self.schedule[i][j] = course.courseCode
 
     def sendToApproval(self, course, session):
         return self.advisor.approveCourse(self, course, session)
