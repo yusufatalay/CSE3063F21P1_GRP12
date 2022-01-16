@@ -1,8 +1,8 @@
-from Services.Controller import createStudents
+from Services.Controller import Controller
 
 
 def main():
-    createStudents()
+    Controller.createStudents()
 
 
 if __name__ == "__main__":

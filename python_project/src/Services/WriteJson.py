@@ -95,6 +95,6 @@ def addStatisticsToLogFile():
     logging.info(
         f"In the simulation {Advisor.creditProblems} credit problems were encountered.")
     logging.info(
-        f"In the simulation {Advisor.teLimitationProblems} time TE limitation problems were encountered.")
+        f"In the simulation {Advisor.teLimitationProblems} TE limitation problems were encountered.")
     logging.info(
         f"In the simulation {Advisor.fteLimitataionProblems} FTE limitation problems were encountered.")

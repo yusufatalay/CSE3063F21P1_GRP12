@@ -18,5 +18,8 @@ class Course:
         else:
             self.courseSessions = courseSessions
 
+    def __eq__(self, other):
+        return self.courseName == other.courseName and self.courseCode == other.courseCode and self.credit == other.credit and self.requiredCredits == other.requiredCredits and self.courseSemester == other.courseSemester and self.courseType == other.courseType and self.preRequisisteCourses == other.preRequisisteCourses and self.courseSessions == other.courseSessions
+
     def __str__(self):
         return f"{self.courseName} --Course Code: {self.courseCode} --Credit: {self.credit}"
