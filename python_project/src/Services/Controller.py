@@ -1,9 +1,14 @@
+# fmt: off
 import random
+import sys
+from traceback import print_tb
+sys.path.append("..")
+from Services.ReadJson import *
+from Services.WriteJson import *
+from Services.StudentCreator import StudentCreator
 from Models.Advisor import Advisor
 from Models.Semester import Semester
-from StudentCreator import StudentCreator
-from ReadJson import *
-from WriteJson import *
+# fmt: on
 
 
 def getPastCourses(fullCourseList, semester):
@@ -46,6 +51,9 @@ def createStudentFile(student):
 
 
 def createStudents():
+    with open('python_project/src/simulation.log', 'w') as f:
+        f.write('LOG FILE\n')
+
     nameArray = createNames("names.json")
 
     semesterName = read_json("input.json")["semester"]
@@ -84,3 +92,5 @@ def createStudents():
             )
             advisor.addStudent(stu)
             createStudentFile(stu)
+
+    addStatisticsToLogFile()

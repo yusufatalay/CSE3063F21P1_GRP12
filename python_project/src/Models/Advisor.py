@@ -1,4 +1,17 @@
+from fileinput import filename
+import logging
+filePath = "./python_project/src/simulation.log"
+logging.basicConfig(filename=filePath, level=logging.INFO)
+
+
 class Advisor:
+    courseQuotaProblems = 0
+    preRequisiteProblems = 0
+    collisionProblems = 0
+    creditProblems = 0
+    teLimitationProblems = 0
+    fteLimitataionProblems = 0
+
     def __init__(self, name, studentList=None):
         self.name = name
         if studentList is None:
@@ -19,19 +32,26 @@ class Advisor:
         if selectedSession.numberOfStudents < selectedSession.courseQuota:
             return True
         else:
-            denialMessage = f"Student couldn't register for {course.courseCode}  because of the quota problem "
-            print(f"{stu.studentID} - {stu.name} : {denialMessage}")
+            denialMessage = f"Student couldn't register for {course.courseCode}  because of the quota problem"
+            formatMsg = f"{stu.studentID} - {stu.name}: {denialMessage}"
+            logging.info(formatMsg)
+            print(formatMsg)
             stu.addDenialMessage(denialMessage)
+            Advisor.courseQuotaProblems += 1
             return False
 
     # Checking the eligibility of courses' prerequisite
     def checkPreRequisite(self, course, stu):
         for failedCourse in stu.transcript.failedCourses:
-            if failedCourse.courseCode in course.preRequisisteCourses:
-                denialMessage = f"The system didn't allow {course.courseCode} student failed prerequisites {failedCourse.courseCode}"
-                print(f"{stu.studentID} - {stu.name} : {denialMessage}")
-                stu.addDenialMessage(denialMessage)
-                return False
+            if course.courseCode.__str__() == "CSE3033":
+                if failedCourse.courseCode in course.preRequisisteCourses:
+                    denialMessage = f"The system didn't allow {course.courseCode} student failed prerequisites {failedCourse.courseCode}"
+                    formatMsg = f"{stu.studentID} - {stu.name}: {denialMessage}"
+                    logging.info(formatMsg)
+                    print(formatMsg)
+                    stu.addDenialMessage(denialMessage)
+                    Advisor.preRequisiteProblems += 1
+                    return False
         return True
 
     # Checking the eligibility of courses' session on students' schedule
@@ -45,8 +65,11 @@ class Advisor:
                         collideCounter += 1
                         if collideCounter > 1:
                             denialMessage = f"Advisor didn't approve {selectedCourse.courseCode} because of at least two hours collision with other courses in schedule"
-                            print(f"{stu.studentID} - {stu.name} : {denialMessage}")
+                            formatMsg = f"{stu.studentID} - {stu.name}: {denialMessage}"
+                            logging.info(formatMsg)
+                            print(formatMsg)
                             stu.addDenialMessage(denialMessage)
+                            Advisor.collisionProblems += 1
                             return False
         return True
 
@@ -56,8 +79,11 @@ class Advisor:
             return True
         else:
             denialMessage = f"Advisor didn't approve {course.courseType} {course.courseCode} because student completed credits < {course.requiredCredits}"
-            print(f"{stu.studentID} - {stu.name} : {denialMessage}")
+            formatMsg = f"{stu.studentID} - {stu.name}: {denialMessage}"
+            logging.info(formatMsg)
+            print(formatMsg)
             stu.addDenialMessage(denialMessage)
+            Advisor.creditProblems += 1
             return False
 
     def checkTELimitation(self, course, stu):
@@ -68,13 +94,19 @@ class Advisor:
 
         if counter == 1 and stu.semester.semesterName == "FALL":
             denialMessage = f"Advisor didn't approve {course.courseType} {course.courseCode} because student already took 1 TE and in FALL semester only 1 TE can be taken."
-            print(f"{stu.studentID} - {stu.name} : {denialMessage}")
+            formatMsg = f"{stu.studentID} - {stu.name}: {denialMessage}"
+            logging.info(formatMsg)
+            print(formatMsg)
             stu.addDenialMessage(denialMessage)
+            Advisor.teLimitationProblems += 1
             return False
         elif counter == 3 and stu.semester.semesterName == "SPRING":
             denialMessage = f"Advisor didn't approve {course.courseType} {course.courseCode} because student already took 3 TEs and in SPRING semester only 3 TEs can be taken."
-            print(f"{stu.studentID} - {stu.name} : {denialMessage}")
+            formatMsg = f"{stu.studentID} - {stu.name}: {denialMessage}"
+            logging.info(formatMsg)
+            print(formatMsg)
             stu.addDenialMessage(denialMessage)
+            Advisor.teLimitationProblems += 1
             return False
         else:
             return True
@@ -82,8 +114,11 @@ class Advisor:
     def checkFTELimitation(self, course, stu):
         if course.courseType == "FTE" and stu.semester.semesterName == "FALL":
             denialMessage = f"Advisor didn't approve FTE {course.courseCode} because students can't take FTE in fall semester unless they are graduating this semester."
-            print(f"{stu.studentID} - {stu.name} : {denialMessage}")
+            formatMsg = f"{stu.studentID} - {stu.name}: {denialMessage}"
+            logging.info(formatMsg)
+            print(formatMsg)
             stu.addDenialMessage(denialMessage)
+            Advisor.fteLimitataionProblems += 1
             return False
         else:
             return True

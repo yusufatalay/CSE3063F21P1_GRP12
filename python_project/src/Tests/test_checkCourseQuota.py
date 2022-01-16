@@ -1,26 +1,24 @@
+# fmt: off
 import sys
-sys.path.append("..")
-
-from Models.Advisor import *
-from Models.CourseCode import *
-from Models.Course import *
-from Models.Transcript import *
-from Models.Student import *
-from Models.CourseSession import *
 import unittest
-
-
+sys.path.append("..")
+from Models.CourseSession import *
+from Models.Student import *
+from Models.Transcript import *
+from Models.Course import *
+from Models.CourseCode import *
+from Models.Advisor import *
+# fmt: on
 
 
 class TestcheckCourseQuota(unittest.TestCase):
 
-
-
     def test_correct(self):
 
-        student = Student("John Doe", "123456789", 3, Advisor("MCG"), Transcript())
+        student = Student("John Doe", "123456789", 3,
+                          Advisor("MCG"), Transcript())
         course = Course("TEST", CourseCode("CSE3055"),
-                    3, 3, 1, "Lecture", [], [])
+                        3, 3, 1, "Lecture", [], [])
 
         # create a session with less students than the quota
         session = CourseSession({"quota": "10", "sessionHours": [
@@ -29,17 +27,18 @@ class TestcheckCourseQuota(unittest.TestCase):
         for i in range(5):
             session.incrementNumberOfStudents()
         # check if checkCourseQuota returns True
-        self.assertTrue(Advisor.checkCourseQuota(session,course,session,student))
+        self.assertTrue(Advisor.checkCourseQuota(
+            session, course, session, student))
 
     def test_wrong(self):
-        student = Student("John Doe", "123456789", 3, Advisor("MCG"), Transcript())
+        student = Student("John Doe", "123456789", 3,
+                          Advisor("MCG"), Transcript())
         course = Course("TEST", CourseCode("CSE3055"),
-                    3, 3, 1, "Lecture", [], [])
+                        3, 3, 1, "Lecture", [], [])
 
         # create a session with less students than the quota
         session = CourseSession({"quota": "10", "sessionHours": [
                                 {"day": "1", "hour": "1"}, {"day": "2", "hour": "2"}]})
-
 
         # create a session with more students than the quota
         session = CourseSession({"quota": "10", "sessionHours": [
@@ -48,7 +47,8 @@ class TestcheckCourseQuota(unittest.TestCase):
         for i in range(11):
             session.incrementNumberOfStudents()
         # check if checkCourseQuota returns False
-        self.assertFalse(Advisor.checkCourseQuota(session,course,session,student))
+        self.assertFalse(Advisor.checkCourseQuota(
+            session, course, session, student))
 
 
 if __name__ == '__main__':

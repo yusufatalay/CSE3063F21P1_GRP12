@@ -1,7 +1,12 @@
-import datetime, math
+# fmt: off
+import datetime
+import math
+import sys
+sys.path.append("..")
 from Models.Student import Student
 from Models.StudentID import StudentID
 from Models.Transcript import Transcript
+# fmt: on
 
 
 class StudentCreator:

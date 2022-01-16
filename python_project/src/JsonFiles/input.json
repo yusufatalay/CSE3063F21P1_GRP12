@@ -1,5 +1,5 @@
 {
-  "failRatePercent": 0,
-  "numberOfStudentsPerSemester": 60,
-  "semester": "SPRING"
+  "failRatePercent": 15,
+  "numberOfStudentsPerSemester": 70,
+  "semester": "FALL"
 }

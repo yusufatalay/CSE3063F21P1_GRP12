@@ -1,4 +1,4 @@
-from Controller import createStudents
+from Services.Controller import createStudents
 
 
 def main():
