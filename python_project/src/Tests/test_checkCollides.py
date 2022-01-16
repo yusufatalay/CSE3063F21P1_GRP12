@@ -1,6 +1,4 @@
 # fmt: off
-from doctest import OutputChecker
-from msilib.sequence import AdvtExecuteSequence
 import sys
 import unittest
 sys.path.append("../")
