@@ -43,15 +43,14 @@ class Advisor:
     # Checking the eligibility of courses' prerequisite
     def checkPreRequisite(self, course, stu):
         for failedCourse in stu.transcript.failedCourses:
-            if course.courseCode.__str__() == "CSE3033":
-                if failedCourse.courseCode in course.preRequisisteCourses:
-                    denialMessage = f"The system didn't allow {course.courseCode} student failed prerequisites {failedCourse.courseCode}"
-                    formatMsg = f"{stu.studentID} - {stu.name}: {denialMessage}"
-                    logging.info(formatMsg)
-                    print(formatMsg)
-                    stu.addDenialMessage(denialMessage)
-                    Advisor.preRequisiteProblems += 1
-                    return False
+            if failedCourse.courseCode in course.preRequisisteCourses:
+                denialMessage = f"The system didn't allow {course.courseCode} student failed prerequisites {failedCourse.courseCode}"
+                formatMsg = f"{stu.studentID} - {stu.name}: {denialMessage}"
+                logging.info(formatMsg)
+                print(formatMsg)
+                stu.addDenialMessage(denialMessage)
+                Advisor.preRequisiteProblems += 1
+                return False
         return True
 
     # Checking the eligibility of courses' session on students' schedule

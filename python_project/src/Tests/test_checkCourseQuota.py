@@ -1,7 +1,7 @@
 # fmt: off
 import sys
 import unittest
-sys.path.append("..")
+sys.path.append("../")
 from Models.CourseSession import *
 from Models.Student import *
 from Models.Transcript import *
@@ -49,7 +49,3 @@ class TestcheckCourseQuota(unittest.TestCase):
         # check if checkCourseQuota returns False
         self.assertFalse(Advisor.checkCourseQuota(
             session, course, session, student))
-
-
-if __name__ == '__main__':
-    unittest.main()
