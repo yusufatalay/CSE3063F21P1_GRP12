@@ -10,3 +10,4 @@ python_project/src/Services/__pycache__/
 *.class
 *.log
 python_project/src/Tests/__pycache__/
+python_project/docs_word
