@@ -287,7 +287,7 @@
       "courseName": "Computer Programming II",
       "courseCode": "CSE1242",
       "credit": 6,
-      "preRequisiteCourse": [],
+      "preRequisiteCourse": ["CSE1241"],
       "courseSessions": [
         {
           "quota": 70,
@@ -514,7 +514,7 @@
       "courseName": "Data Structures",
       "courseCode": "CSE2225",
       "credit": 7,
-      "preRequisiteCourse": [],
+      "preRequisiteCourse": ["CSE1242"],
       "courseSessions": [
         {
           "quota": 70,
@@ -566,7 +566,7 @@
       "courseName": "Electric Circuits",
       "courseCode": "EE2031",
       "credit": 5,
-      "preRequisiteCourse": [],
+      "preRequisiteCourse": ["PHYS1102"],
       "courseSessions": [
         {
           "quota": 70,
@@ -622,7 +622,7 @@
       "courseName": "Numerical Methods",
       "courseCode": "MATH2059",
       "credit": 4,
-      "preRequisiteCourse": [],
+      "preRequisiteCourse": ["Math 1001"],
       "courseSessions": [
         {
           "quota": 70,
@@ -650,7 +650,7 @@
       "courseName": "Analysis of Algorithms",
       "courseCode": "CSE2246",
       "credit": 6,
-      "preRequisiteCourse": [],
+      "preRequisiteCourse": ["CSE2225"],
       "courseSessions": [
         {
           "quota": 70,
@@ -715,7 +715,7 @@
       "courseName": "Electronics",
       "courseCode": "EE2032",
       "credit": 5,
-      "preRequisiteCourse": [],
+      "preRequisiteCourse": ["EE2031"],
       "courseSessions": [
         {
           "quota": 40,
@@ -904,10 +904,10 @@
       "courseType": "MANDATORY"
     },
     {
-      "courseName": "Modelling and Discrete Simulation",
+      "courseName": "Modeling and Discrete Simulation",
       "courseCode": "IE3081",
       "credit": 4,
-      "preRequisiteCourse": [],
+      "preRequisiteCourse": ["STAT2253"],
       "courseSessions": [
         {
           "quota": 70,
@@ -935,7 +935,7 @@
       "courseName": "Computer Organization",
       "courseCode": "CSE3038",
       "credit": 7,
-      "preRequisiteCourse": [],
+      "preRequisiteCourse": ["CSE2138"],
       "courseSessions": [
         {
           "quota": 70,
@@ -963,7 +963,7 @@
       "courseName": "Software Engineering",
       "courseCode": "CSE3044",
       "credit": 7,
-      "preRequisiteCourse": [],
+      "preRequisiteCourse": ["CSE3055"],
       "courseSessions": [
         {
           "quota": 70,
@@ -991,7 +991,7 @@
       "courseName": "Introduction to Signals and Systems",
       "courseCode": "CSE3048",
       "credit": 5,
-      "preRequisiteCourse": [],
+      "preRequisiteCourse": ["MATH2055"],
       "courseSessions": [
         {
           "quota": 70,
@@ -1019,7 +1019,7 @@
       "courseName": "Formal Languages and Automata Theory",
       "courseCode": "CSE3264",
       "credit": 5,
-      "preRequisiteCourse": [],
+      "preRequisiteCourse": ["CSE2023"],
       "courseSessions": [
         {
           "quota": 70,
@@ -1047,7 +1047,7 @@
       "courseName": "Operations Research",
       "courseCode": "IE3235",
       "credit": 4,
-      "preRequisiteCourse": [],
+      "preRequisiteCourse": ["MATH2256"],
       "courseSessions": [
         {
           "quota": 70,
@@ -1190,7 +1190,7 @@
       "courseName": "Introduction to Machine Learning",
       "courseCode": "CSE4288",
       "credit": 5,
-      "preRequisiteCourse": [],
+      "preRequisiteCourse": ["MATH2256", "STAT2253"],
       "courseSessions": [
         {
           "quota": 70,
@@ -1218,7 +1218,7 @@
       "courseName": "Engineering Project II",
       "courseCode": "CSE4298",
       "credit": 5,
-      "preRequisiteCourse": [],
+      "preRequisiteCourse": ["CSE4297"],
       "courseSessions": [
         {
           "quota": 70,

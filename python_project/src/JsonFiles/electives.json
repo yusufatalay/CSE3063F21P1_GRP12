@@ -28,7 +28,7 @@
       "courseName": "Advanced Unix Programming",
       "courseCode": "CSE4034",
       "credit": 5,
-      "preRequisiteCourse": [],
+      "preRequisiteCourse": ["CSE3033"],
       "courseSessions": [
         {
           "quota": 45,
@@ -192,7 +192,7 @@
       "courseName": "Microprocessors",
       "courseCode": "CSE4217",
       "credit": 5,
-      "preRequisiteCourse": [],
+      "preRequisiteCourse": ["CSE3038"],
       "courseSessions": [
         {
           "quota": 45,
